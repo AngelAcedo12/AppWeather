@@ -1,0 +1,50 @@
+
+        <h1 class="city">{{wheater?.name}} | {{wheater?.sys?.country}}</h1>
+        <div class="">
+            @for (item of wheater?.weather; track $index) {
+            <div class=" ">
+                <article class="iconTime_descripcion"> 
+                        <img width="200" height="200"  [src]="url+item.icon+'@'+url2">
+                        <h2>{{item.description}} </h2>
+                   
+                        
+                </article>
+                <div class="other_props">
+                        <article >
+                     
+                                <div>
+                                       <h1 style="text-align: center;">
+               
+                                               Viento
+                                       </h1>
+                                </div>
+                                <h2> Speed:  {{wheater?.wind?.speed}} 🍃</h2>
+                                <h2> Rafagas: {{wheater?.wind?.gust}} 🌬</h2>
+                                <h2> Grados: {{wheater?.wind?.deg}} º </h2>
+                               </article>
+                               <article>
+                                       <div>
+                                               <h1> Temperaturas</h1>
+                                       </div>
+                                       
+                                       <h2>Actual: {{wheater?.main?.temp}} º</h2>
+                                       <h2>Sensación: {{wheater?.main?.feels_like}} º</h2>
+                                       <h2> Max: {{wheater?.main?.temp_max}} º</h2>
+                                       <h2>Min: {{wheater?.main?.temp_min}} º</h2>
+                                       
+                               </article>
+                               <article>
+                                        <div>
+                                                <h1>Otros datos</h1>
+                                                
+                                        </div>
+                                        <h2>Humedad: {{wheater?.main?.humidity}}</h2>
+                                        <h2>Presión: {{wheater?.main?.pressure}}</h2>
+                               </article>
+                           
+                </div>
+                
+        </div>
+            }
+            
+        </div>

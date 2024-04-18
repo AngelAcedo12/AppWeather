@@ -1,0 +1,44 @@
+.tiempos {
+    display: flex;
+    flex-direction: row;
+
+    
+}
+.actual-time-cards{
+    border:none;
+    box-shadow: none;
+    
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1em;
+    
+}
+.iconTime_descripcion{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.other_props{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap:2em;
+    & article{
+        border: black solid ;
+        border-radius: 10px;
+        border-width: 1px;
+        padding: 1em;
+        align-items: center;
+        flex-grow: 1;
+        text-align: center;
+    }
+}
+ h2 {
+    margin: 0;
+    font-size: medium;
+}

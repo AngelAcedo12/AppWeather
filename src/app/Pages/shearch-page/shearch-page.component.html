@@ -1,0 +1,15 @@
+<section >
+        <h1>Tiempo actual</h1>
+
+        @if(wheaterService.searchWheater()==undefined){
+            <h2>Cargando...</h2>
+        }@else {
+
+            <app-actual-time-component [wheater]="wheaterService.searchWheater()"></app-actual-time-component>
+        }
+    
+
+</section>
+<section>
+    
+</section>
