@@ -1,12 +1,12 @@
 
         <h1 class="city">{{wheater?.name}} | {{wheater?.sys?.country}}</h1>
-        <div class="">
+        <div class="box-wheater">
             @for (item of wheater?.weather; track $index) {
-            <div class=" ">
+            <div class="props">
                 <article class="iconTime_descripcion"> 
                         <img width="200" height="200"  [src]="url+item.icon+'@'+url2">
                         <h2>{{item.description}} </h2>
-                   
+                        
                         
                 </article>
                 <div class="other_props">
@@ -18,19 +18,21 @@
                                                Viento
                                        </h1>
                                 </div>
-                                <h2> Speed:  {{wheater?.wind?.speed}} 🍃</h2>
-                                <h2> Rafagas: {{wheater?.wind?.gust}} 🌬</h2>
-                                <h2> Grados: {{wheater?.wind?.deg}} º </h2>
+                                <h2> Speed:  {{wheater?.wind?.speed}}🍃</h2>
+                                <h2> Rafagas: {{wheater?.wind?.gust}}🌬</h2>
+                                <h2> Grados: {{wheater?.wind?.deg}}º </h2>
                                </article>
                                <article>
                                        <div>
                                                <h1> Temperaturas</h1>
                                        </div>
                                        
-                                       <h2>Actual: {{wheater?.main?.temp}} º</h2>
-                                       <h2>Sensación: {{wheater?.main?.feels_like}} º</h2>
-                                       <h2> Max: {{wheater?.main?.temp_max}} º</h2>
-                                       <h2>Min: {{wheater?.main?.temp_min}} º</h2>
+                                       <h2>Actual: {{wheater?.main?.temp}}ºC</h2>
+                                       <h2>Sensación: {{wheater?.main?.feels_like}}ºC</h2>
+                                       <div class="temp_max_min">
+                                               <h2> Max: {{wheater?.main?.temp_max}}ºC ⬆</h2>
+                                               <h2>Min: {{wheater?.main?.temp_min}}ºC ⬇</h2>
+                                       </div>
                                        
                                </article>
                                <article>

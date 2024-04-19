@@ -32,8 +32,9 @@ export class LayaoutComponent implements OnInit{
      navigator.geolocation.getCurrentPosition((data) =>
       {
 
-        this.weaterService.shearchWheaterByCoords({lat:data.coords.latitude,lon:data.coords.longitude})  
-      } 
+        this.weaterService.shearchWheaterByCoords({lat:data.coords.latitude,lon:data.coords.longitude})
+      }
+
     )
   
 
