@@ -16,6 +16,6 @@ export class ForecastComponent {
   public url2: string = '2x.png';
 
   getDate(date:number){
-    return new Date(date)
+    return new Date(date*1000)
   }
 }
