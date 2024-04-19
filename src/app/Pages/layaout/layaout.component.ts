@@ -33,6 +33,7 @@ export class LayaoutComponent implements OnInit{
       {
 
         this.weaterService.shearchWheaterByCoords({lat:data.coords.latitude,lon:data.coords.longitude})
+        this.weaterService.forecatShearchByCords({lat:data.coords.latitude,lon:data.coords.longitude})
       }
 
     )

@@ -3,4 +3,8 @@ section{
     width: auto;
     height: 100%;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: space-between;
 }

@@ -5,7 +5,7 @@
             <div class="props">
                 <article class="iconTime_descripcion"> 
                         <img width="200" height="200"  [src]="url+item.icon+'@'+url2">
-                        <h2>{{item.description}} </h2>
+                        <h2>{{item.description}} | {{item.main}} </h2>
                         
                         
                 </article>
@@ -37,11 +37,10 @@
                                </article>
                                <article>
                                         <div>
-                                                <h1>Otros datos</h1>
-                                                
+                                                <h1>Otros datos</h1>   
                                         </div>
-                                        <h2>Humedad: {{wheater?.main?.humidity}}</h2>
-                                        <h2>Presión: {{wheater?.main?.pressure}}</h2>
+                                        <h2>Humedad: {{wheater?.main?.humidity}}% </h2>
+                                        <h2>Presión: {{wheater?.main?.pressure}} Pa</h2>
                                </article>
                            
                 </div>

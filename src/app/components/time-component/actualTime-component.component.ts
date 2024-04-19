@@ -13,7 +13,7 @@ export class TimeComponentComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
    
 
-    console.log(this.wheater)
+  
     
   }
   

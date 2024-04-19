@@ -1,0 +1,21 @@
+<div class="box">
+    <h1>Prevision para los 16 dias siguientes</h1>
+    <div class="container">
+        @for (item of forecast?.list ; track $index) {
+            <mat-card class="card">  
+              
+                <img [src]="url+item.weather[0].icon+'@'+url2">
+                <div class="props">
+                    <h2 class="main_desc">{{item.weather[0].main}} </h2>
+                    <h3 class="desc">{{item.weather[0].description}}</h3>
+                </div>
+                <div class="props_temp">
+                    <h3>{{item.temp.min}}ºC ⬇ </h3>
+                    <h3>{{item.temp.min}}ºC ⬆ </h3>
+                </div>
+    
+            </mat-card>
+        }
+    </div>
+    
+</div>

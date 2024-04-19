@@ -5,6 +5,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { MaterialsModule } from '../materials/materials.module';
 import { TimeComponentComponent } from './time-component/actualTime-component.component';
 import { LoadingComponent } from './loading/loading.component';
+import { ForecastComponent } from './forecast/forecast.component';
 
 
 
@@ -13,11 +14,13 @@ import { LoadingComponent } from './loading/loading.component';
   declarations: [
     TimeComponentComponent,
     LoadingComponent,
+    ForecastComponent,
 
   ],
   exports:[
     TimeComponentComponent,
     LoadingComponent,
+    ForecastComponent
     
   ],
   imports: [

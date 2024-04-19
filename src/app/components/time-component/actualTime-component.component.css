@@ -1,4 +1,8 @@
 
+*{
+    --background-card:#1CAADC;
+
+}
 .box-wheater{
     animation: fade 1s ease-in-out forwards;
 }
@@ -6,6 +10,7 @@
     display: flex ;
     flex-direction: column;
     gap: 1em;
+   
 }
 .actual-time-cards{
     border:none;
@@ -23,9 +28,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0px 0px 5px 2px black;
+    box-shadow: 0px 0px 10px 2px black;
     
     border-radius: 10px;
+   
 }
 .other_props{
     display: flex;
@@ -33,13 +39,15 @@
     justify-content: space-around;
     gap:2em;
     & article{
-        box-shadow: 0px 0px 5px 2px black;
+        box-shadow: 0px 0px 10px 2px black;
         border-radius: 10px;
         border-width: 1px;
         padding: 1em;
         align-items: center;
         flex-grow: 1;
         text-align: center;
+      
+
     }
 
 }
