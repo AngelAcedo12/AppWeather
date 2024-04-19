@@ -14,4 +14,8 @@ export class ForecastComponent {
 
   public url: string = 'https://openweathermap.org/img/wn/';
   public url2: string = '2x.png';
+
+  getDate(date:number){
+    return new Date(date)
+  }
 }

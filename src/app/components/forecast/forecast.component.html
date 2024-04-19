@@ -3,7 +3,7 @@
     <div class="container">
         @for (item of forecast?.list ; track $index) {
             <mat-card class="card">  
-              
+                <h3 style="text-align: center;">{{getDate(item.dt) | date: 'shortDate' }}</h3>
                 <img [src]="url+item.weather[0].icon+'@'+url2">
                 <div class="props">
                     <h2 class="main_desc">{{item.weather[0].main}} </h2>

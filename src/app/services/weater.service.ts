@@ -40,7 +40,16 @@ export class WeaterService {
   
    this.http.get<DtoForecastWeater>(`${enviroment.BASE_URL}forecast/daily?lat=${coords.lat}&lon=${coords.lon}&cnt=16&appid=${enviroment.SECOND_API_JEy}`)
     .subscribe(data => {
+      
       this.searchForecast=computed(() => data)
   })
   }
+  forecatShearchByCity(city:string){
+  console.log(city)
+    this.http.get<DtoForecastWeater>(`${enviroment.BASE_URL}forecast/daily?q=${city}&cnt=16&appid=${enviroment.SECOND_API_JEy}&units=metric`)
+     .subscribe(data => {
+       
+       this.searchForecast=computed(() => data)
+   })
+   }
 }

@@ -25,6 +25,7 @@ export class LayaoutComponent implements OnInit{
 
   shearchNewLocation(shearch:string){
       this.weaterService.shearchWheaterByCity(shearch)
+      this.weaterService.forecatShearchByCity(shearch)
   }
 
   getCurretLocation()  {
