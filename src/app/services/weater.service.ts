@@ -20,11 +20,14 @@ export class WeaterService {
 
   public searchWheater : Signal<DtoWheaterByLocation | undefined> = signal(undefined)
   public searchForecast : Signal<DtoForecastWeater |  undefined> = signal(undefined)
-   
+  public notFound =signal(false) 
+
+
   shearchWheaterByCoords(coords : Coords){
     this.searchWheater=computed(() => undefined)
     this.http.get<DtoWheaterByLocation>(`${enviroment.BASE_URL}weather?lat=${coords.lat}&lon=${coords.lon}&appid=${enviroment.API_KEY}&units=metric`)
-    .subscribe(data => {
+    .subscribe((data) => {
+      console.log(data)
       this.searchWheater=computed(() => data)})
   }
 

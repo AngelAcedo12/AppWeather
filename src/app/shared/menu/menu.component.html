@@ -5,10 +5,10 @@
 
     <mat-form-field >
         <mat-label > Tu ciudad 🌎</mat-label>
-        <input    matInput  [formControl]="shearch">
+        <input  (keyup)="onSubmit()"  matInput  [formControl]="shearch">
        
     </mat-form-field>
-    <button (click)="onSubmit()" mat-button >Buscar</button>
+    <!-- <button (click)="onSubmit()" mat-button >Buscar</button> -->
     </div>
 
 </header>

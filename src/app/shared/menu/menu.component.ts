@@ -16,7 +16,9 @@ export class MenuComponent {
   shearch = new FormControl('')
 
   onSubmit(){
-    
+    if(this.shearch.value!.length<1){
+      return ;
+    }
     this.shearchNewLocation.emit(this.shearch.value || "")
 
   }

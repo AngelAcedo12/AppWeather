@@ -68,7 +68,7 @@
     display: flex;
     flex-direction: row;
     padding: 1em;
-    
+    flex-wrap: wrap;
     justify-content: space-around;
   
 }
@@ -81,8 +81,11 @@
   
 }
 .recomendations{
-    background-color: aliceblue;
+    border-width: 1px;
+    border: gainsboro solid;
+    border-radius: 10px;
     padding:1em;
+
 }
 @keyframes fade {
     0%{
