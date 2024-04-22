@@ -25,7 +25,6 @@ export class WeaterService {
     this.searchWheater=computed(() => undefined)
     this.http.get<DtoWheaterByLocation>(`${enviroment.BASE_URL}weather?lat=${coords.lat}&lon=${coords.lon}&appid=${enviroment.API_KEY}&units=metric`)
     .subscribe(data => {
-    
       this.searchWheater=computed(() => data)})
   }
 

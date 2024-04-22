@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { WeaterService } from '../../services/weater.service';
 import { GraphTemp } from '../../models/GraphTemp';
-import { DtoForecastWeater } from '../../models/DTO/DtoForecast';
+import { DtoForecastWeater, List } from '../../models/DTO/DtoForecast';
 
 @Component({
   selector: 'app-temp-graph',
@@ -14,12 +14,12 @@ export class TempGraphComponent {
 
  
     temperaturas : GraphTemp[] | undefined
-    dayTemp: GraphTemp[] | undefined
+   
    constructor(){
 
     this.temperaturas=this.getTemperatures()
-    this.dayTemp=this.getDayTemp()
-    console.log(this.temperaturas)
+
+    this.xAxisLabelTemp=this.weaterService.searchForecast()?.city.name 
    }
   view = [400, 400];
   colorShecheme = {
@@ -32,67 +32,67 @@ export class TempGraphComponent {
   showYAxis: boolean = true;
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
-  xAxisLabelTemp: string = 'Temperaturas ';
+  xAxisLabelTemp: string | undefined;
   xAxisLaberDayTemp: string = 'Temperaturas durate el dia';
   showYAxisLabel: boolean = true;
 
-  getDayTemp(){
-    const temp = this.weaterService.searchForecast()
-    if(temp==undefined) return ;
-    var listTemp : GraphTemp[] = []
-    listTemp=  temp.list.map((day) => {
-      let newDay: GraphTemp = {
-        name: new Date(day.dt*1000).toLocaleDateString(),
-        series:[
-          {
-            name:"Day",
-            value:day.temp.day
-          },
-          {
-            name:"Morn",
-            value:day.temp.morn
-          },
-          {
-            name:"Night",
-            value:day.temp.night
-          },
-        
-        ]
-        
-      }
-      return newDay
-    
-    }
-
-    )
-    return listTemp
-  }
+  
   
   getTemperatures(){
     const temp = this.weaterService.searchForecast()
-    if(temp==undefined) return ;
-    var listTemp : GraphTemp[] = []
-    listTemp=  temp.list.map((day) => {
-      let newDay: GraphTemp = {
-        name: new Date(day.dt*1000).toLocaleDateString(),
-        series:[
-          {
-            name:"Min",
-            value:day.temp.min
-          },
-          {
-            name:"Max",
-            value:day.temp.max
-          },
-        
-        ]
-        
-      }
-      return newDay
+    if(temp==undefined) return  ;
+    var listGraph: GraphTemp[] = []
+    var media : GraphTemp = {
+      name:"Media",
+      series: this.getMedia(temp.list)
+    }    
+    var min : GraphTemp = {
+      name: "Minima",
+      series: this.getMinima(temp.list)
+    }
+    var max : GraphTemp={
+      name:"Maxima",
+      series: this.getMaxima(temp.list)
+    }
+    listGraph.push(media)
+    listGraph.push(min)
+    listGraph.push(max)
+
+    return listGraph
     
     }
+    getMaxima(temp:List[]){
+      return temp.map(day => {
+        return {
+          name:new Date(day.dt*1000).toLocaleDateString(),
+          value:day.temp.max
+        }
+      })
+    }
 
-    )
-    return listTemp
+    getMedia(temp:List[]){
+
+      return temp.map(day => {
+          return {
+            name:new Date(day.dt*1000).toLocaleDateString(),
+            value:day.temp.eve
+          }
+      })
+
+    }
+    getMinima(temp: List[]){
+      return temp.map(day => {
+        return {
+          name: new Date(day.dt*1000).toLocaleDateString(),
+          value:day.temp.min
+        }
+      })
+    }
+
+    
+
   }
- }
+
+
+
+ 
