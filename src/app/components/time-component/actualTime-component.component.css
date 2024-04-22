@@ -64,6 +64,26 @@
     font-size: medium;
 }
 
+.box-recomendations{
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+    
+    justify-content: space-around;
+  
+}
+.box-setcion-recomendations{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    
+    justify-content: space-around;
+  
+}
+.recomendations{
+    background-color: aliceblue;
+    padding:1em;
+}
 @keyframes fade {
     0%{
      opacity: 0;

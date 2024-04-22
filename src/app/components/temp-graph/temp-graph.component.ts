@@ -33,10 +33,10 @@ export class TempGraphComponent {
   showLegend: boolean = true;
   showXAxisLabel: boolean = true;
   xAxisLabelTemp: string | undefined;
-  xAxisLaberDayTemp: string = 'Temperaturas durate el dia';
+  xAxisLaberDayTemp: string = 'Dias';
+  yAxisLaberDayTemp:string = "Grados"
   showYAxisLabel: boolean = true;
 
-  
   
   getTemperatures(){
     const temp = this.weaterService.searchForecast()

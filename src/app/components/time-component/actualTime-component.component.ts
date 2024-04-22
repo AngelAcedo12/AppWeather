@@ -12,10 +12,25 @@ export class TimeComponentComponent implements OnChanges {
   
   ngOnChanges(changes: SimpleChanges): void {
    
-
+  
   
     
   }
+  goodDay =[
+    "Picnic en el Parque",
+    "Caminata Escénica",
+    "Día en la Playa",
+    "Visita a un Jardín Botánico",
+    "Paseo en Bicicleta"
+  ]
+  badDay=[
+    "Maratón de Películas o Series",
+    "Cocinar o Hornear",
+    "Tarde de Juegos de Mesa",
+    "Practicar Pasatiempos Creativos",
+    "Spa en Casa"
+    
+  ]
   
   public url: string = 'https://openweathermap.org/img/wn/';
   public url2: string = '2x.png';

@@ -44,8 +44,32 @@
                                </article>
                            
                 </div>
-                
+                <div class="box-setcion-recomendations"> 
+                        <h1>Recomendaciones | {{wheater!.clouds.all }} ☁</h1>
+                        <div class="box-recomendations">
+                                
+                                @if (wheater!.clouds.all<20) {
+                                        @for (item of goodDay; track $index) {
+                                                <mat-card class="recomendations">
+
+                                                        <span >
+                                                                {{item}}
+                                                        </span>
+                                                </mat-card>
+                                        }
+                                }@else {
+                                        @for (item of badDay; track $index) {
+                                                <mat-card  class="recomendations">
+                                                        <span>
+                                                                {{item}}
+                                                        </span>
+                                                </mat-card>
+                                        }
+                                }
+                        </div>
+                </div>
         </div>
             }
-            
+        
         </div>
+      
