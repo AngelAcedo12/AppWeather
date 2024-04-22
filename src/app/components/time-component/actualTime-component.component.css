@@ -14,7 +14,6 @@
 }
 .actual-time-cards{
     border:none;
-    
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -28,9 +27,10 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0px 0px 10px 2px black;
-    
+    border-width: 1px;
+    border: gainsboro solid;
     border-radius: 10px;
+
    
 }
 .other_props{
@@ -39,9 +39,9 @@
     justify-content: space-around;
     gap:2em;
     & article{
-        box-shadow: 0px 0px 10px 2px black;
-        border-radius: 10px;
         border-width: 1px;
+        border: gainsboro solid;
+        border-radius: 10px;
         padding: 1em;
         align-items: center;
         flex-grow: 1;

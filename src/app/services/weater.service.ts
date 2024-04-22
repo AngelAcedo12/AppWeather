@@ -38,14 +38,14 @@ export class WeaterService {
 
   forecatShearchByCords(coords:Coords){
   
-   this.http.get<DtoForecastWeater>(`${enviroment.BASE_URL}forecast/daily?lat=${coords.lat}&lon=${coords.lon}&cnt=16&appid=${enviroment.SECOND_API_JEy}`)
+   this.http.get<DtoForecastWeater>(`${enviroment.BASE_URL}forecast/daily?lat=${coords.lat}&lon=${coords.lon}&cnt=16&appid=${enviroment.SECOND_API_JEy}&units=metric`)
     .subscribe(data => {
       
       this.searchForecast=computed(() => data)
   })
   }
   forecatShearchByCity(city:string){
-  console.log(city)
+    console.log(`${enviroment.BASE_URL}forecast/daily?q=${city}&cnt=16&appid=${enviroment.SECOND_API_JEy}&units=metric`)
     this.http.get<DtoForecastWeater>(`${enviroment.BASE_URL}forecast/daily?q=${city}&cnt=16&appid=${enviroment.SECOND_API_JEy}&units=metric`)
      .subscribe(data => {
        

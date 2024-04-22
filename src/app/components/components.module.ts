@@ -6,6 +6,8 @@ import { MaterialsModule } from '../materials/materials.module';
 import { TimeComponentComponent } from './time-component/actualTime-component.component';
 import { LoadingComponent } from './loading/loading.component';
 import { ForecastComponent } from './forecast/forecast.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { TempGraphComponent } from './temp-graph/temp-graph.component';
 
 
 
@@ -15,17 +17,19 @@ import { ForecastComponent } from './forecast/forecast.component';
     TimeComponentComponent,
     LoadingComponent,
     ForecastComponent,
+    TempGraphComponent,
 
   ],
   exports:[
     TimeComponentComponent,
     LoadingComponent,
-    ForecastComponent
-    
+    ForecastComponent,
+
   ],
   imports: [
     CommonModule,
-    MaterialsModule
+    MaterialsModule,
+    NgxChartsModule
   ]
 })
 export class ComponentsModule { }

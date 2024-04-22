@@ -2,7 +2,7 @@
     <h1>Prevision para los 16 dias siguientes</h1>
     <div class="container">
         @for (item of forecast?.list ; track $index) {
-            <mat-card class="card">  
+            <mat-card class="card" onclick="">  
                 <h3 style="text-align: center;">{{getDate(item.dt) | date: 'shortDate' }}</h3>
                 <img [src]="url+item.weather[0].icon+'@'+url2">
                 <div class="props">
@@ -17,5 +17,14 @@
             </mat-card>
         }
     </div>
-    
+    <div>
+       
+        @if(forecast==undefined){
+            <app-loading></app-loading>
+        }@else{
+
+            <app-temp-graph ></app-temp-graph>
+        }
+        
+    </div>
 </div>
