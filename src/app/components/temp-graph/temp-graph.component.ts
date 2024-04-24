@@ -54,9 +54,8 @@ export class TempGraphComponent {
       name:"Maxima",
       series: this.getMaxima(temp.list)
     }
-    listGraph.push(media)
-    listGraph.push(min)
-    listGraph.push(max)
+    listGraph.push(max,min,media)
+ 
 
     return listGraph
     

@@ -4,11 +4,15 @@
     <div>   
 
     <mat-form-field >
-        <mat-label > Tu ciudad 🌎</mat-label>
-        <input  (keyup)="onSubmit()"  matInput  [formControl]="shearch">
-       
+        <mat-label > Tu ciudad 🌎, tu pais 🏳</mat-label>
+        <input [matAutocomplete]="auto" (keyup.space)="setComa()" (keypress)="getSearch()" (keyup.enter)="onSubmit()"  matInput  [formControl]="search">
+        <mat-autocomplete #auto="matAutocomplete">
+            @for (item of locationService.searchLocation() ; track $index) {
+                <mat-option [value]="item.name +','+ item.country">{{item.name}}, {{item.country}}</mat-option>
+            }
+        </mat-autocomplete>
     </mat-form-field>
-    <!-- <button (click)="onSubmit()" mat-button >Buscar</button> -->
+  
     </div>
 
 </header>

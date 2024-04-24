@@ -38,6 +38,8 @@
     flex-direction: row;
     justify-content: space-around;
     gap:2em;
+    overflow-x: auto;
+    padding-bottom: 1em;
     & article{
         border-width: 1px;
         border: gainsboro solid;
@@ -46,6 +48,7 @@
         align-items: center;
         flex-grow: 1;
         text-align: center;
+        text-wrap: nowrap;
       
 
     }
@@ -62,21 +65,23 @@
  h2 {
     margin: 0;
     font-size: medium;
+    text-wrap: nowrap;
 }
 
 .box-recomendations{
     display: flex;
     flex-direction: row;
-    padding: 1em;
-    flex-wrap: wrap;
+    gap: 1em;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     justify-content: space-around;
+
+    padding-bottom: 1em;
   
 }
 .box-setcion-recomendations{
     display: flex;
     flex-direction: column;
-    padding: 1em;
-    
     justify-content: space-around;
   
 }
@@ -85,7 +90,13 @@
     border: gainsboro solid;
     border-radius: 10px;
     padding:1em;
+    text-wrap: nowrap;
 
+}
+
+::-webkit-scrollbar{
+    height: 2px;
+    border-radius: 10px;
 }
 @keyframes fade {
     0%{

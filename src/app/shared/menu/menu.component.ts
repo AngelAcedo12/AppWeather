@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { MenuItems } from '../../models/MenuItems';
 import { FormControl } from '@angular/forms';
+import { LocationService } from '../../services/location.service';
 
 
 @Component({
@@ -10,19 +11,38 @@ import { FormControl } from '@angular/forms';
 })
 export class MenuComponent {
 
+  public locationService = inject(LocationService)
+
  @Output() shearchNewLocation = new EventEmitter<string>()
 
 
-  shearch = new FormControl('')
+  search = new FormControl('')
+
 
   onSubmit(){
-    if(this.shearch.value!.length<1){
+    if(this.search.value!.length<1){
       return ;
     }
-    this.shearchNewLocation.emit(this.shearch.value || "")
+    let search = this.search.value;
+
+    if(search!.length<1){
+      this.shearchNewLocation.emit("Madrid, ES")
+    }
+    
+    this.shearchNewLocation.emit(search || "Madrid, ES")
+  
 
   }
 
+  getSearch(){
+    let search = this.search.value;
+    if(search!=null){
 
+      this.locationService.getLocation(search)
+    }
+  }
+  setComa(){
+    this.search.setValue(this.search.value+",")
+  }
 
 }
