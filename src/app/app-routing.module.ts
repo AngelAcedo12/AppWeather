@@ -3,12 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path:'home',
+    data:{title:'Home'},
+
+    loadChildren: ()=> import("./AllPages/homePage/home-page.module").then(m => m.HomePageModule)
+  },
+  {
     path:'wheater',
-    loadChildren: ()=> import("./Pages/pages.module").then(m => m.PagesModule)
+    data:{title:'El tiempo ☁'},
+    loadChildren: ()=> import("./AllPages/wheater/Pages/pages.module").then(m => m.PagesModule)
   },
   {
     path:'',
-    redirectTo:'wheater',
+    redirectTo:'home',
     pathMatch:'full'
   }
 ];

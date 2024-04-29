@@ -1,20 +1,35 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { MenuItems } from '../../models/MenuItems';
 import { FormControl } from '@angular/forms';
 import { LocationService } from '../../services/location.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-menu',
+  selector: 'app-menu-wheater',
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit{
 
   public locationService = inject(LocationService)
+  
+  public router = inject(ActivatedRoute)
+
 
  @Output() shearchNewLocation = new EventEmitter<string>()
 
+  ngOnInit(): void {
+
+    this.selectPage()
+    console.log()
+  }
+
+  selectedLocation: MenuItems | undefined
+  menuItems: MenuItems[] = [
+    {title: "Home", url: "/home"},
+    {title: "El tiempo ☁", url: "/wheater"},  
+  ]
 
   search = new FormControl('')
 
@@ -34,6 +49,19 @@ export class MenuComponent {
 
   }
 
+  selectPage(){
+    
+    
+      let page = this.menuItems.find(item => {
+        return item.title === this.router.snapshot.data["title"]
+      })
+      if(page){
+        this.selectedLocation = page
+      }
+
+
+  }
+
   getSearch(){
     let search = this.search.value;
     if(search!=null){
@@ -44,5 +72,10 @@ export class MenuComponent {
   setComa(){
     this.search.setValue(this.search.value+",")
   }
-
+  openMenu(){
+    document.getElementById("menuLater")?.classList.replace("close","open")
+  }
+  closeMenu(){
+    document.getElementById("menuLater")?.classList.replace("open","close")
+  }
 }

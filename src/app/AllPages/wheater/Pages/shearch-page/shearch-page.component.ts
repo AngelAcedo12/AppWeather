@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { WeaterService } from '../../services/weater.service';
+import { WeaterService } from '../../../../services/weater.service';
 
 @Component({
   selector: 'app-shearch-page',

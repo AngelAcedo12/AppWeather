@@ -1,18 +1,50 @@
-<header class="menu">
-  
-    <h1>El tiempo ☁</h1>
-    <div>   
+@if(selectedLocation?.title==="El tiempo ☁"){
 
-    <mat-form-field >
-        <mat-label > Tu ciudad 🌎, tu pais 🏳</mat-label>
-        <input [matAutocomplete]="auto" (keyup.space)="setComa()" (keypress)="getSearch()" (keyup.enter)="onSubmit()"  matInput  [formControl]="search">
-        <mat-autocomplete #auto="matAutocomplete">
-            @for (item of locationService.searchLocation() ; track $index) {
-                <mat-option [value]="item.name +','+ item.country">{{item.name}}, {{item.country}}</mat-option>
-            }
-        </mat-autocomplete>
-    </mat-form-field>
-  
-    </div>
+    <header class="menu-tiempo">
+        <button class="btn-open" (click)="openMenu()">
+            <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
+        </button>
+        
+        <h1>{{selectedLocation?.title}}</h1>
+    
+    
+            <div>   
+                <mat-form-field >
+                    <mat-label > Tu ciudad 🌎, tu pais 🏳</mat-label>
+                    <input [matAutocomplete]="auto" (keyup.space)="setComa()" (keypress)="getSearch()" (keyup.enter)="onSubmit()"  matInput  [formControl]="search">
+                    <mat-autocomplete #auto="matAutocomplete">
+                        @for (item of locationService.searchLocation() ; track $index) {
+                            <mat-option [value]="item.name +','+ item.country">{{item.name}}, {{item.country}}</mat-option>
+                        }
+                    </mat-autocomplete>
+                </mat-form-field>
+        
+                
+            </div>
+    
+        
+    
+    </header>
+}
+@if (selectedLocation?.title==="Home") {
+    <header class="menu-home">
+        <button class="btn-open" (click)="openMenu()">
+            <img width="25" height="25" src="../../../assets/icons8-menú-50-white.png">
+        </button>
+        <h1>{{selectedLocation?.title}}</h1>
+    </header>
+}
 
-</header>
+
+<nav class="links">
+    @for (item of menuItems; track $index) {
+        <a  [href]="item.url" routerLinkActive="active">{{item.title}}</a>
+    }
+</nav>
+
+<nav id="menuLater" class="menu-later close">
+    <button  class="btn-close" (click)="closeMenu()">Close</button>
+    @for (item of menuItems; track $index) {
+        <a  [href]="item.url" routerLinkActive="active">{{item.title}}</a>
+    }
+</nav>

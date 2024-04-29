@@ -1,6 +1,6 @@
 import { Component, inject, Injector, OnInit } from '@angular/core';
-import { WeaterService } from '../../services/weater.service';
-import { Coords } from '../../models/Coords';
+import { WeaterService } from '../../../../services/weater.service';
+import { Coords } from '../../../../models/Coords';
 
 @Component({
   selector: 'app-layaout',
@@ -20,9 +20,6 @@ export class LayaoutComponent implements OnInit{
 
   }
 
-
-
-
   shearchNewLocation(shearch:string){
       this.weaterService.shearchWheaterByCity(shearch)
       this.weaterService.forecatShearchByCity(shearch)
@@ -30,7 +27,7 @@ export class LayaoutComponent implements OnInit{
 
   getCurretLocation()  {
 
-     navigator.geolocation.getCurrentPosition((data) =>
+   navigator.geolocation.getCurrentPosition((data) =>
       {
 
         this.weaterService.shearchWheaterByCoords({lat:data.coords.latitude,lon:data.coords.longitude})

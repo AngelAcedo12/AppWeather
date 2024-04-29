@@ -11,30 +11,21 @@ import { catchError, throwError } from 'rxjs';
 })
 export class WeaterService {
 
-  constructor(private http : HttpClient) { 
-
-
-  }
-
-
-  
+  constructor(private http : HttpClient) { }
 
   public searchWheater : Signal<DtoWheaterByLocation | undefined> = signal(undefined)
   public searchForecast : Signal<DtoForecastWeater |  undefined> = signal(undefined)
+  
   public notFound =signal(false) 
 
 
   private handlerEror(error:HttpErrorResponse){
     if (error.status === 0) {
-      // A client-side or network error occurred. Handle it accordingly.
-      
+     
     } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong.
+      
      
     }
-    
-    // Return an observable with a user-facing error message.
     return throwError(() => {});
   }
 
