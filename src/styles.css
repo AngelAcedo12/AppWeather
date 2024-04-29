@@ -14,8 +14,8 @@ body{
     width: 5px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: cadetblue;
-
+    background-color: black;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track{

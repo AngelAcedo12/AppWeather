@@ -6,6 +6,7 @@ import { LayaoutComponent } from './layaout/layaout.component';
 import { AllComponent } from './all/all.component';
 import { SharedModule } from '../../shared/shared.module';
 import { ComponentsModule } from '../../components/components.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ComponentsModule } from '../../components/components.module';
     CommonModule,
     BanderasRoutingModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule
   ]
 })
 export class BanderasModule { }

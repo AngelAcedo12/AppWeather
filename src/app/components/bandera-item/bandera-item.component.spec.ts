@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BanderasListComponent } from './banderas-list.component';
+import { BanderaItemComponent } from './bandera-item.component';
 
-describe('BanderasListComponent', () => {
-  let component: BanderasListComponent;
-  let fixture: ComponentFixture<BanderasListComponent>;
+describe('BanderaItemComponent', () => {
+  let component: BanderaItemComponent;
+  let fixture: ComponentFixture<BanderaItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BanderasListComponent]
+      declarations: [BanderaItemComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(BanderasListComponent);
+    fixture = TestBed.createComponent(BanderaItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

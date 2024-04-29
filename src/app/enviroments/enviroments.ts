@@ -4,6 +4,6 @@ export const enviroment = {
     BASE_URL_OPEN_WHEATER: "https://open-weather13.p.rapidapi.com/",
     RAPID_API_HOST: "map-places.p.rapidapi.com",
     API_KEY : "d8eade6018964e180a0ec741ce28739f",
-    
+    BANDERAS_API_URL:  "https://restcountries.com/v3.1",
     LOCATION_BASE_URL : 'http://api.openweathermap.org/geo/1.0/direct',
 }

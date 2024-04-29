@@ -9,7 +9,7 @@ const routes: Routes = [
       component: LayaoutComponent,  
       children: [
           {
-              path: 'all',
+              path: '',
               component: AllComponent
           },
 

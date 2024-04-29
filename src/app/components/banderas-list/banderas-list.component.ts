@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DtoBanderas } from 'models/DTO/DtoBanderas';
 
 @Component({
   selector: 'app-banderas-list',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './banderas-list.component.css'
 })
 export class BanderasListComponent {
+
+  @Input() banderas: DtoBanderas[] | undefined ;
+
+
+
 
 }

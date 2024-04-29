@@ -1,1 +1,9 @@
-<p>all works!</p>
+
+@defer (when banderasService.isLoading()==false ) {
+
+    <app-banderas-list [banderas]="banderasService.banderas()"></app-banderas-list>
+    
+}@placeholder {
+    <app-loading></app-loading>
+
+}
