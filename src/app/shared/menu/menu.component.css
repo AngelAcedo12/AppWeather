@@ -41,6 +41,7 @@ h1{
         text-decoration: none;
         color: black;
         font-size: large;
+        align-items: center;
     }
     & a:hover{
         background-color: light-dark(black,aliceblue);

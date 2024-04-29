@@ -1,7 +1,19 @@
 section{
     display: flex;
     flex-direction: column;
-    padding: 5em;
+    padding: 1em;
     gap: 1em;
+  
+}
+
+.link{
+    border: black solid;
+}
+p{
+    padding: 1em;
+    font-size: medium;
+    text-wrap: wrap;
+    text-align: justify;
+    text-justify: auto;
     
 }
