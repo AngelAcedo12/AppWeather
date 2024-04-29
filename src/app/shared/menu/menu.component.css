@@ -22,6 +22,15 @@
     color: white;
     background-color: #000
 }
+.menu-banderas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+    color: white;
+    background-color: #12F372
+}
 h1{
     margin: 0;
 }

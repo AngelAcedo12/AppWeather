@@ -14,6 +14,11 @@ const routes: Routes = [
     loadChildren: ()=> import("./AllPages/wheater/Pages/pages.module").then(m => m.PagesModule)
   },
   {
+    path:'banderas',
+    data:{title:'Banderas'},
+    loadChildren: ()=> import("./AllPages/banderas/banderas.module").then(m => m.BanderasModule)
+  },
+  {
     path:'',
     redirectTo:'home',
     pathMatch:'full'

@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-menu-wheater',
+  selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit{
   public locationService = inject(LocationService)
   
   public router = inject(ActivatedRoute)
-
+  
 
  @Output() shearchNewLocation = new EventEmitter<string>()
 
@@ -29,6 +29,7 @@ export class MenuComponent implements OnInit{
   menuItems: MenuItems[] = [
     {title: "Home", url: "/home"},
     {title: "El tiempo ☁", url: "/wheater"},  
+    {title: "Banderas", url: "/banderas"}
   ]
 
   search = new FormControl('')

@@ -7,7 +7,6 @@
         
         <h1>{{selectedLocation?.title}}</h1>
     
-    
             <div>   
                 <mat-form-field >
                     <mat-label > Tu ciudad 🌎, tu pais 🏳</mat-label>
@@ -19,11 +18,7 @@
                     </mat-autocomplete>
                 </mat-form-field>
         
-                
             </div>
-    
-        
-    
     </header>
 }
 @if (selectedLocation?.title==="Home") {
@@ -34,7 +29,14 @@
         <h1>{{selectedLocation?.title}}</h1>
     </header>
 }
-
+@if(selectedLocation?.title==="Banderas"){
+    <header class="menu-banderas">
+        <button class="btn-open" (click)="openMenu()">
+            <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
+        </button>
+        <h1>{{selectedLocation?.title}}</h1>
+    </header>
+}
 
 <nav class="links">
     @for (item of menuItems; track $index) {

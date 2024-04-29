@@ -8,6 +8,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TempGraphComponent } from './temp-graph/temp-graph.component';
+import { BanderasListComponent } from './banderas-list/banderas-list.component';
 
 
 
@@ -18,6 +19,7 @@ import { TempGraphComponent } from './temp-graph/temp-graph.component';
     LoadingComponent,
     ForecastComponent,
     TempGraphComponent,
+    BanderasListComponent,
 
   ],
   exports:[
