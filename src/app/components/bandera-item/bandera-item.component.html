@@ -2,7 +2,8 @@
     @defer (on viewport;) {
 
         <img [src]="bandera?.flags?.png">
-        <h1 class="name">{{bandera?.translations?.spa?.common}}</h1>
+
+        <h1 class="name box-title">{{bandera?.translations?.spa?.common}}</h1>
     }@placeholder {
         <div class="placeholder">
             <app-loading></app-loading>
