@@ -14,14 +14,20 @@ export class BanderasService {
   
   banderas : Signal<DtoBanderas[] | undefined> = signal(undefined)
   isLoading = signal(true)
-  getBanderas(){
-    this.http.get<DtoBanderas[]>(`${enviroment.BANDERAS_API_URL}/all`).subscribe(
-      data => {
-        this.banderas = computed(() => data);
-        this.isLoading.update(()=> false)
-        console.log("Complete")
-      }
-    )
+  async getBanderas(){
+
+    await fetch(`${enviroment.BANDERAS_API_URL}/all`).then(
+      res => res.json()).then(data => { this.banderas = computed(() => data);
+        this.isLoading.update(()=> false)})
+
+
+    // this.http.get<DtoBanderas[]>(`${enviroment.BANDERAS_API_URL}/all`).subscribe(
+    //   data => {
+    //     this.banderas = computed(() => data);
+    //     this.isLoading.update(()=> false)
+    //     console.log("Complete")
+    //   }
+    // )
   }
 
 

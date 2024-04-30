@@ -28,23 +28,32 @@ a{
     display: flex;
     flex-direction: column;
     gap: 2em;
-    border-radius: 10px;
-    border: grey solid;
+    border: snow solid 1px;
     text-decoration: none;
     color: #000;
     padding: 1em;
     cursor: pointer;
     
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 a:hover{
-    background-color: grey;
+    border-radius: 10px;
+
     color: black;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    & img{
+        border-radius: 10px;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
 }
 img{
     object-fit: cover;
     width: 500px;
     height: 350px;
-    border-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
+::-webkit-scrollbar{
+    height: 1px;
 }

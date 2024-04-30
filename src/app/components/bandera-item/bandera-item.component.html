@@ -1,5 +1,11 @@
 <div class="box">
+    @defer (on viewport;) {
 
-    <img [src]="bandera?.flags?.png">
-    <h1 class="name">{{bandera?.translations?.spa?.common}}</h1>
+        <img [src]="bandera?.flags?.png">
+        <h1 class="name">{{bandera?.translations?.spa?.common}}</h1>
+    }@placeholder {
+        <div class="placeholder">
+
+        </div>
+    }
 </div>
