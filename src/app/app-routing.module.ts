@@ -19,6 +19,7 @@ const routes: Routes = [
     loadChildren: ()=> import("./AllPages/banderas/banderas.module").then(m => m.BanderasModule)
   },
   {
+    
     path:'',
     redirectTo:'home',
     pathMatch:'full'
