@@ -14,7 +14,7 @@ export class BanderasService {
   
   banderas : Signal<DtoBanderas[] | undefined> = signal(undefined)
   isLoading = signal(true)
-  async getBanderas(){
+  getBanderas(){
 
 
     
@@ -22,9 +22,9 @@ export class BanderasService {
       data => {
         this.banderas = computed(() => data);
         this.isLoading.update(()=> false)
-        console.log("Complete")
+        console.log("COmplete")
       }
-    )
+    )  
   }
 
 

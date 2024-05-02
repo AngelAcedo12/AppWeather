@@ -23,8 +23,8 @@ export class ModalPaisComponent {
   ngOnChanges(changes: SimpleChanges): void {
     //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
     //Add '${implements OnChanges}' to the class.
-    console.log(this.pais)
-    console.log(this.showModal)
+
+    
 
     document.getElementById("detected")?.addEventListener("click",( event ) => this.close(event), this.showModal)
 
@@ -33,7 +33,6 @@ export class ModalPaisComponent {
 
   close(event : Event) {
     if(this.showModal == false) return
-    console.log(event.target)
     if(event.target == document.getElementById("detected") ) {
       this.closeModal.emit();
     }
@@ -57,7 +56,7 @@ export class ModalPaisComponent {
       
       let languagesKeys = languages ? Object.keys(languages) : [];
       let key = languagesKeys;
-      console.log(key)
+      
       let arryLenguajes = key.map((key) => {
         return (languages as any)?.[`${key}`]
       })
