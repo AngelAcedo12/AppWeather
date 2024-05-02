@@ -16,18 +16,15 @@ export class BanderasService {
   isLoading = signal(true)
   async getBanderas(){
 
-    await fetch(`${enviroment.BANDERAS_API_URL}/all`).then(
-      res => res.json()).then(data => { this.banderas = computed(() => data);
-        this.isLoading.update(()=> false)})
 
-
-    // this.http.get<DtoBanderas[]>(`${enviroment.BANDERAS_API_URL}/all`).subscribe(
-    //   data => {
-    //     this.banderas = computed(() => data);
-    //     this.isLoading.update(()=> false)
-    //     console.log("Complete")
-    //   }
-    // )
+    
+    this.http.get<DtoBanderas[]>(`${enviroment.BANDERAS_API_URL}/all`).subscribe(
+      data => {
+        this.banderas = computed(() => data);
+        this.isLoading.update(()=> false)
+        console.log("Complete")
+      }
+    )
   }
 
 

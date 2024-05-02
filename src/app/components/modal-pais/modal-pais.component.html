@@ -7,7 +7,7 @@
 
     <dialog (click)="close($event)" class="content" [open]="showModal">
       
-            <img  [src]="pais?.flags?.png">
+            <img class="bandera" [src]="pais?.flags?.png">
             <h1 class="name">{{pais?.translations?.spa?.common}} </h1>
             <h2 >Poblacion: {{pais?.population}} </h2>
             <div  class="paises" >
@@ -16,7 +16,7 @@
             </div>
             <h2  >Capital: {{pais?.capital?.[0]}}</h2>
             <h2  >{{getMoneda().name}} | {{getMoneda().symbol}}</h2>
-
+            <a class="link_map" [href]="pais?.maps?.googleMaps"><img class="img_map" width="50" height="50" src="../../../assets/mapa-50.webp" ></a>
     </dialog>
 }
 
