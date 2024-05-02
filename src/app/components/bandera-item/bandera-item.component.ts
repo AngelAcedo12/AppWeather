@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DtoBanderas } from 'models/DTO/DtoBanderas';
 
 @Component({
@@ -9,4 +9,6 @@ import { DtoBanderas } from 'models/DTO/DtoBanderas';
 export class BanderaItemComponent {
 
   @Input() bandera: DtoBanderas | undefined;
+ 
+
 }

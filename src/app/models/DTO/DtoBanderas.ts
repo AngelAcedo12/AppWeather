@@ -289,7 +289,7 @@ interface Idd {
   suffixes?: string[];
 }
 
-interface Currencies {
+export interface Currencies {
   MDL?: MDL;
   USD?: MDL;
   EUR?: MDL;

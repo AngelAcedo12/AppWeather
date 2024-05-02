@@ -3,8 +3,9 @@
     @for (item of banderas; track $index) {
  
             
-            <app-bandera-item [bandera]="item"></app-bandera-item>
+            <app-bandera-item (click)="openModal($index)"  [bandera]="item"></app-bandera-item>
      
 
     }
+    <app-modal-pais [pais]="paisSelected" [showModal]="modalState()" (closeModal)="changeStateModalState()"></app-modal-pais>
 </section>

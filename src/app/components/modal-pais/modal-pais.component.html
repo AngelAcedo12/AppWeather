@@ -1,0 +1,19 @@
+
+
+@if (showModal) {
+    <div  (click)="close($event)" class="detected">
+    
+    </div>
+
+    <dialog id="content" (click)="close($event)" class="content" [open]="showModal">
+      
+            <img [src]="pais?.flags?.png">
+            <h1 class="name">{{pais?.translations?.spa?.common}} </h1>
+            <h2>Poblacion: {{pais?.population}} </h2>
+            <h2>Lenguajes: {{getLenguajes()}}</h2>
+            <h2>Capital: {{pais?.capital?.[0]}}</h2>
+            <h2>{{getMoneda().name}} | {{getMoneda().symbol}}</h2>
+
+    </dialog>
+}
+

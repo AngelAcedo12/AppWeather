@@ -10,6 +10,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { TempGraphComponent } from './temp-graph/temp-graph.component';
 import { BanderasListComponent } from './banderas-list/banderas-list.component';
 import { BanderaItemComponent } from './bandera-item/bandera-item.component';
+import { ModalPaisComponent } from './modal-pais/modal-pais.component';
 
 
 
@@ -22,6 +23,7 @@ import { BanderaItemComponent } from './bandera-item/bandera-item.component';
     TempGraphComponent,
     BanderasListComponent,
     BanderaItemComponent,
+    ModalPaisComponent,
 
   ],
   exports:[
