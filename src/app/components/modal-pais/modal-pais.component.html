@@ -10,7 +10,10 @@
             <img [src]="pais?.flags?.png">
             <h1 class="name">{{pais?.translations?.spa?.common}} </h1>
             <h2>Poblacion: {{pais?.population}} </h2>
-            <h2>Lenguajes: {{getLenguajes()}}</h2>
+            <div class="paises" >
+                <h2>Idiomas:</h2>
+                <h2 *ngFor="let item of getLenguajes()">{{item}}</h2>
+            </div>
             <h2>Capital: {{pais?.capital?.[0]}}</h2>
             <h2>{{getMoneda().name}} | {{getMoneda().symbol}}</h2>
 

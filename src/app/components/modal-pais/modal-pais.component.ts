@@ -54,10 +54,14 @@ export class ModalPaisComponent {
       return;
     } else {
       let languages = this.pais.languages;
-      console.log(languages)
+      
       let languagesKeys = languages ? Object.keys(languages) : [];
-      let key = languagesKeys[0];
-      return (languages as any)?.[`${key}`]
+      let key = languagesKeys;
+      console.log(key)
+      let arryLenguajes = key.map((key) => {
+        return (languages as any)?.[`${key}`]
+      })
+      return arryLenguajes
     }
   }
 }

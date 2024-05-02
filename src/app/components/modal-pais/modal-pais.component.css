@@ -43,6 +43,14 @@ img{
     position: fixed;
     backdrop-filter: blur(5px);
 }
+.paises{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+h2{
+    width: fit-content;
+}
 @keyframes fadeIn {
     
     from {
