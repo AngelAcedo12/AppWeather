@@ -34,7 +34,7 @@ export class ModalPaisComponent {
   close(event : Event) {
     if(this.showModal == false) return
     console.log(event.target)
-    if(event.target != document.getElementById("content")) {
+    if(event.target == document.getElementById("detected") ) {
       this.closeModal.emit();
     }
   }

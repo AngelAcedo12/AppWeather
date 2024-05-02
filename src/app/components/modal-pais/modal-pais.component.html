@@ -1,21 +1,21 @@
 
 
 @if (showModal) {
-    <div  (click)="close($event)" class="detected">
+    <div id="detected" (click)="close($event)" class="detected">
     
     </div>
 
-    <dialog id="content" (click)="close($event)" class="content" [open]="showModal">
+    <dialog (click)="close($event)" class="content" [open]="showModal">
       
-            <img [src]="pais?.flags?.png">
+            <img  [src]="pais?.flags?.png">
             <h1 class="name">{{pais?.translations?.spa?.common}} </h1>
-            <h2>Poblacion: {{pais?.population}} </h2>
-            <div class="paises" >
-                <h2>Idiomas:</h2>
-                <h2 *ngFor="let item of getLenguajes()">{{item}}</h2>
+            <h2 >Poblacion: {{pais?.population}} </h2>
+            <div  class="paises" >
+                <h2 >Idiomas:</h2>
+                <h2   *ngFor="let item of getLenguajes()">{{item}}</h2>
             </div>
-            <h2>Capital: {{pais?.capital?.[0]}}</h2>
-            <h2>{{getMoneda().name}} | {{getMoneda().symbol}}</h2>
+            <h2  >Capital: {{pais?.capital?.[0]}}</h2>
+            <h2  >{{getMoneda().name}} | {{getMoneda().symbol}}</h2>
 
     </dialog>
 }
