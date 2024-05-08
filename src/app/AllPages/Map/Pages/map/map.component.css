@@ -1,0 +1,25 @@
+.map_box{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+
+}
+.map{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    
+}
+.opcion{
+    position: absolute;
+    margin-top: 6em;
+    margin-left: 2em;
+    display: flex;
+    z-index: 1000;
+}

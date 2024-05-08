@@ -1,6 +1,6 @@
 @if(selectedLocation?.title==="El tiempo ☁"){
 
-    <header class="menu-tiempo">
+    <header class="menu-tiempo" >
         <button class="btn-open" (click)="openMenu()">
             <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
         </button>
@@ -37,6 +37,16 @@
         <h1>{{selectedLocation?.title}}</h1>
     </header>
 }
+@if(selectedLocation?.title==="Mapa"){
+    <header class="menu-map">
+        <button class="btn-open" (click)="openMenu()">
+            <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
+        </button>
+        <h1>{{selectedLocation?.title}}</h1>
+    </header>
+}
+
+
 
 <nav class="links">
     @for (item of menuItems; track $index) {

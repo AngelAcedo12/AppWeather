@@ -6,4 +6,6 @@ export const enviroment = {
     API_KEY : "d8eade6018964e180a0ec741ce28739f",
     BANDERAS_API_URL:  "https://restcountries.com/v3.1",
     LOCATION_BASE_URL : 'http://api.openweathermap.org/geo/1.0/direct',
+    MAP_BOX_TOKEN: "pk.eyJ1IjoiYW5nZWwxMjMxMjMxIiwiYSI6ImNsaTM2YnNiNjBld3QzcWxzZm5tcWpyengifQ.MhtYCIUTIf2AcAIGBZAYnA",
+    OPEN_DATA_API: "https://public.opendatasoft.com",
 }

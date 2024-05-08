@@ -11,6 +11,8 @@ import { TempGraphComponent } from './temp-graph/temp-graph.component';
 import { BanderasListComponent } from './banderas-list/banderas-list.component';
 import { BanderaItemComponent } from './bandera-item/bandera-item.component';
 import { ModalPaisComponent } from './modal-pais/modal-pais.component';
+import { LocalitationSelectedComponent } from './localitation-selected/localitation-selected.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,6 +26,7 @@ import { ModalPaisComponent } from './modal-pais/modal-pais.component';
     BanderasListComponent,
     BanderaItemComponent,
     ModalPaisComponent,
+    LocalitationSelectedComponent,
 
   ],
   exports:[
@@ -31,12 +34,15 @@ import { ModalPaisComponent } from './modal-pais/modal-pais.component';
     LoadingComponent,
     ForecastComponent,
     BanderaItemComponent,
-    BanderasListComponent
+    BanderasListComponent,
+    LocalitationSelectedComponent
   ],
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     MaterialsModule,
-    NgxChartsModule
+    NgxChartsModule,
+
   ]
 })
 export class ComponentsModule { }

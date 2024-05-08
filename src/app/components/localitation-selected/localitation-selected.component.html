@@ -1,0 +1,29 @@
+
+<div class="opcionLocation">
+<form [formGroup]="form">
+    @if (comunitiesService.comunitys!=undefined) {
+        <select (change)="getProv()"   [formControl]="form.controls.comunity">   
+            <option value="" disabled selected>Selecciona una comunidad</option>
+            @for (item of comunitiesService.comunitys; track $index) {
+                <option  [value]="item.acom_name">{{item.acom_name}}</option>
+            }
+        </select>
+        
+    }
+    <select (change)="getMunicipios()" [formControl] ="form.controls.prov">
+        <option value="" disabled selected>Selecciona una provincia</option>
+        @for (item of comunitiesService.province; track $index) {
+            <option [value]="item.prov_name">{{item.prov_name}}</option>
+        }
+    </select>
+    <select (change)="getMunicipio()" [formControl] ="form.controls.municipio">
+        <option value="" disabled selected>Selecciona un municipio</option>
+        @for (item of comunitiesService.municipio; track $index) {
+            <option  [value]="item.mun_name">{{item.mun_name}}</option>
+        }
+    </select>
+
+
+</form>
+
+</div>

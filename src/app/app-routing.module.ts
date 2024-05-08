@@ -19,6 +19,11 @@ const routes: Routes = [
     loadChildren: ()=> import("./AllPages/banderas/banderas.module").then(m => m.BanderasModule)
   },
   {
+    path:'map',
+    data:{title:'Mapa'},
+    loadChildren: ()=> import("./AllPages/Map/Pages/pages.module").then(m => m.PagesModule)
+  },
+  {
     
     path:'',
     redirectTo:'home',

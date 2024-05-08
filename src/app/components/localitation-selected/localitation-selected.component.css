@@ -1,0 +1,34 @@
+.opcionLocation{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+
+}
+select {
+    width: 100%;
+    
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: large;
+    cursor: pointer;
+}
+option{
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-size: large;
+    cursor: pointer;
+}

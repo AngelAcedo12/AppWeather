@@ -22,14 +22,15 @@ export class MenuComponent implements OnInit{
   ngOnInit(): void {
 
     this.selectPage()
-    console.log()
+    
   }
 
   selectedLocation: MenuItems | undefined
   menuItems: MenuItems[] = [
     {title: "Home", url: "/home"},
     {title: "El tiempo ☁", url: "/wheater"},  
-    {title: "Banderas", url: "/banderas"}
+    {title: "Banderas", url: "/banderas"},
+    {title: "Mapa", url: "/map"}
   ]
 
   search = new FormControl('')

@@ -43,7 +43,9 @@ export class ModalPaisComponent {
       return;
     } else {
       let currencies = this.pais.currencies;
-      let currenciesKeys = currencies ? Object.keys(currencies) : [];
+      let currenciesKeys = currencies ? Object.keys(currencies) : [];     
+      console.log(currencies)
+      console.log(currenciesKeys)
       let key = currenciesKeys[0];
       return (currencies as any)?.[`${key}`]
     }
