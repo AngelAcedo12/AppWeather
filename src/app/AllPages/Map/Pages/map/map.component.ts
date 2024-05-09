@@ -43,8 +43,8 @@ export class MapComponent implements AfterViewInit {
       
     });
     
-    this.map.on('click', (event) => { 
-
+    this.map.on('dblclick', (event) => { 
+      event.preventDefault()
       let coords = {
         lat: event.lngLat.lat,
         lon: event.lngLat.lng
@@ -67,10 +67,14 @@ export class MapComponent implements AfterViewInit {
     if(this.marker!=undefined){
       this.marker.remove()
     }
-
+    let routToWheater = `/wheater?shearch=${municipio.mun_name}`
+    let popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+      `<a href=${routToWheater} class="marker">${municipio.mun_name}</a>`
+    );  
     this.marker = new mapboxgl.Marker()
-      .setLngLat([municipio.geo_point_2d.lon, municipio.geo_point_2d.lat])
-      .addTo(this.map)
+    this.marker.setPopup(popup)
+    this.marker.setLngLat([municipio.geo_point_2d.lon, municipio.geo_point_2d.lat])
+    this.marker.addTo(this.map)
     this.map.easeTo({
       center: [municipio.geo_point_2d.lon, municipio.geo_point_2d.lat],
       zoom: 10

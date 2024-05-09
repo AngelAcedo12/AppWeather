@@ -1,6 +1,7 @@
 import { Component, inject, Injector, OnInit } from '@angular/core';
 import { WeaterService } from '../../../../services/weater.service';
 import { Coords } from '../../../../models/Coords';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-layaout',
@@ -10,13 +11,19 @@ import { Coords } from '../../../../models/Coords';
 export class LayaoutComponent implements OnInit{
 
   private weaterService : WeaterService = inject(WeaterService)
-
+  private router = inject(ActivatedRoute)
 
 
   ngOnInit(): void {
     
-    this.getCurretLocation()  
-
+    
+    this.router.queryParams.subscribe((params) => {
+      if(params['shearch']){
+        this.shearchNewLocation(params['shearch'])
+      }else{
+        this.getCurretLocation()
+      }
+    })
 
   }
 
