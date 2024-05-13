@@ -3,6 +3,7 @@ import { MenuItems } from '../../models/MenuItems';
 import { FormControl } from '@angular/forms';
 import { LocationService } from '../../services/location.service';
 import { ActivatedRoute } from '@angular/router';
+import { OauthService } from 'services/oauth.service';
 
 
 @Component({
@@ -12,8 +13,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MenuComponent implements OnInit{
 
+
   public locationService = inject(LocationService)
-  
+  public oauthService = inject(OauthService)
   public router = inject(ActivatedRoute)
   
 
@@ -53,13 +55,17 @@ export class MenuComponent implements OnInit{
 
   selectPage(){
     
-    
+
       let page = this.menuItems.find(item => {
         return item.title === this.router.snapshot.data["title"]
       })
+      
       if(page){
         this.selectedLocation = page
+      }else{
+        this.selectedLocation = undefined
       }
+      console.log(this.selectedLocation, "selectedLocation")
 
 
   }
@@ -79,5 +85,8 @@ export class MenuComponent implements OnInit{
   }
   closeMenu(){
     document.getElementById("menuLater")?.classList.replace("open","close")
+  }
+  logOut() {
+    this.oauthService.closeSesion()
   }
 }

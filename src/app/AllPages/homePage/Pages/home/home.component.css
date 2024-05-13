@@ -19,10 +19,11 @@ p{
 }
 .list-proyect{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1em;
     padding: 1em;
     overflow-x: auto;
+    justify-content: space-around;
 }
 a{
     display: flex;
@@ -30,6 +31,7 @@ a{
     gap: 2em;
     border: snow solid 1px;
     text-decoration: none;
+    
     color: #000;
     padding: 1em;
     cursor: pointer;

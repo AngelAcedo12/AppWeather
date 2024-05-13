@@ -1,0 +1,16 @@
+<section>
+    <div>
+        <form [formGroup]="form" class="form">
+            <h1>Registrase</h1>
+            <mat-form-field  >
+                <input [formControl]="form.controls.name" matInput placeholder="Nombre">
+            
+            </mat-form-field>
+          
+            <mat-form-field>
+                <input  [formControl]="form.controls.password" matInput placeholder="Contraseña">
+            </mat-form-field>
+            <button (click)="singUp()" mat-raised-button color="primary">Registrarse</button>
+        </form>
+    </div>
+</section>

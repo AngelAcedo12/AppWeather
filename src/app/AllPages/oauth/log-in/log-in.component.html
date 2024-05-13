@@ -1,0 +1,16 @@
+<section>
+    <div>
+        <form [formGroup]="form" class="form">
+            <h1>Iniciar sesion</h1>
+            <mat-form-field  >
+                <input [formControl]="form.controls.name" matInput placeholder="Nombre">
+            
+            </mat-form-field>
+          
+            <mat-form-field>
+                <input  [formControl]="form.controls.password" matInput placeholder="Contraseña">
+            </mat-form-field>
+            <button (click)="logIn()" mat-raised-button color="primary">Iniciar sesion</button>
+        </form>
+    </div>
+</section>

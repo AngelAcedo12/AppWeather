@@ -43,16 +43,33 @@
             <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
         </button>
         <h1>{{selectedLocation?.title}}</h1>
+
     </header>
+
 }
 
 
+@if (selectedLocation==undefined) {
+    <button class="btn-open" (click)="openMenu()">
+        <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
+    </button>
+}
 
 <nav class="links">
+  
     @for (item of menuItems; track $index) {
         <a  [href]="item.url" routerLinkActive="active">{{item.title}}</a>
     }
     <a href="https://github.com/AngelAcedo12/AppsRepositorios">GitHub </a>
+    <div>
+        @if (oauthService.userSave) {
+            <a  (click)="logOut()">Cerrar Sesion</a>
+        }@else{
+
+            <a href="oauth/log-in" >Iniciar Sesion</a>
+            <a href="oauth/sing-up">Registrarse</a>
+        }
+    </div>
 </nav>
 
 <nav id="menuLater" class="menu-later close">
@@ -63,4 +80,13 @@
     <a href="https://github.com/AngelAcedo12/AppsRepositorios">
         GitHub
     </a>
+   
+        @if (oauthService.userSave) {
+            <a  (click)="logOut()">Cerrar Sesion</a>
+        }@else{
+
+            <a href="oauth/log-in" >Iniciar Sesion</a>
+            <a href="oauth/sing-up">Registrarse</a>
+        }
+ 
 </nav>
