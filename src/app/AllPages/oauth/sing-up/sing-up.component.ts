@@ -32,6 +32,7 @@ export class SingUpComponent {
       
     name : new FormControl('', [Validators.required, Validators.minLength(3)]),
     password : new FormControl('', [Validators.required, Validators.minLength(6)]),
+    
   })
 
   singUp(){

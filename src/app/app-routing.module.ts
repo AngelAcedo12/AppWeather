@@ -33,11 +33,15 @@ const routes: Routes = [
     loadChildren: ()=> import("./AllPages/oauth/oauth.module").then(m => m.OauthModule)
   },
   {
-    
-    path:'',
-    redirectTo:'home',
-    pathMatch:'full'
-  }
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path:'**',
+    loadComponent: () => import("./AllPages/404/404.component").then(m => m.NotFoundComponent)
+  },
+
  
 ];
 
