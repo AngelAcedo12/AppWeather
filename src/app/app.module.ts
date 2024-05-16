@@ -4,9 +4,11 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './AllPages/404/404.component';
 import { SharedModule } from 'shared/shared.module';
+import { JwtInterceptor } from 'services/interceptors/interceptorJWT.interceptor';
+import { SpinnerInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,17 @@ import { SharedModule } from 'shared/shared.module';
     SharedModule
   ],
   providers: [
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:SpinnerInterceptor,
+      multi: true
+    },
+  
     provideClientHydration(),
     provideAnimationsAsync()
   ],

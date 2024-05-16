@@ -1,6 +1,7 @@
 @if(selectedLocation?.title==="El tiempo ☁"){
 
     <header class="menu-tiempo" >
+       
         <button class="btn-open" (click)="openMenu()">
             <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
         </button>
@@ -61,9 +62,10 @@
         <a  [href]="item.url" routerLinkActive="active">{{item.title}}</a>
     }
     <a href="https://github.com/AngelAcedo12/AppsRepositorios">GitHub </a>
-    <div>
+    <div class="bnt_user_opcion">
         @if (oauthService.userSave) {
             <a  (click)="logOut()">Cerrar Sesion</a>
+            <h2>Usuario: {{oauthService.userSave.name}}  Rol: {{oauthService.userSaveToken?.rol}} </h2>
         }@else{
 
             <a href="oauth/log-in" >Iniciar Sesion</a>

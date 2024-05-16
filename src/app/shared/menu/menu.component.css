@@ -44,7 +44,8 @@ h1{
     align-items: center;
     gap: 1em;
     width: 100%;
-    
+    overflow-x: auto;
+    text-wrap: nowrap;
     & a {
         padding: 1em;
         text-decoration: none;
@@ -63,6 +64,18 @@ h1{
 .btn-open{
     display: none;
 
+}
+.bnt_user_opcion{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    
+    color: black;
+    & h2 {
+        margin: 0;
+    }
 }
 .menu-map{
     display: flex;

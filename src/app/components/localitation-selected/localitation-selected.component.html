@@ -10,18 +10,24 @@
         </select>
         
     }
-    <select (change)="getMunicipios()" [formControl] ="form.controls.prov">
-        <option value="" disabled selected>Selecciona una provincia</option>
-        @for (item of comunitiesService.province; track $index) {
-            <option [value]="item.prov_name">{{item.prov_name}}</option>
-        }
-    </select>
-    <select (change)="getMunicipio()" [formControl] ="form.controls.municipio">
-        <option value="" disabled selected>Selecciona un municipio</option>
-        @for (item of comunitiesService.municipio; track $index) {
-            <option  [value]="item.mun_name">{{item.mun_name}}</option>
-        }
-    </select>
+    @if (comunitiesService.province!=undefined) {
+
+        <select (change)="getMunicipios()" [formControl] ="form.controls.prov">
+            <option value="" disabled selected>Selecciona una provincia</option>
+            @for (item of comunitiesService.province; track $index) {
+                <option [value]="item.prov_name">{{item.prov_name}}</option>
+            }
+        </select>
+    }
+    @if (comunitiesService.municipio) {
+        <select (change)="getMunicipio()" [formControl] ="form.controls.municipio">
+            <option value="" disabled selected>Selecciona un municipio</option>
+            @for (item of comunitiesService.municipio; track $index) {
+                <option  [value]="item.mun_name">{{item.mun_name}}</option>
+            }
+        </select>
+    }
+    
 
 
 </form>

@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { DtoUser } from 'models/DTO/DtoUser';
 import { NotificationService } from './notification-service.service';
+import { UserLogin } from 'models/DTO/DtoVerifyToken';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OauthService {
 
-  constructor(private notificationService: NotificationService) {
+  constructor(private notificationService: NotificationService, private tokenService : TokenService) {
     this.loadUser()
     
   }
-
+  userSaveToken : UserLogin| undefined
   userInLocalStorage : DtoUser[] = []
   userSave : DtoUser = this.getUserInStorage()
 
@@ -55,7 +57,15 @@ export class OauthService {
     return this.userInLocalStorage.find( u => u.name == user.name) ? false : true
   
   }
-
+  saveUserSave(){
+    this.tokenService.verifyToken().subscribe(
+      (res) => {
+        this.userSaveToken = res.result.userLogin
+        console.log(this.userSaveToken)
+      }
+    )
+ 
+  }
   verifyUser(): boolean{
     return this.userSave ? true : false
   }

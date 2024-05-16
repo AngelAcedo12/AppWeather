@@ -1,0 +1,16 @@
+
+@if (isLoading) {
+    <div>
+        <app-loading></app-loading>
+    </div>
+}@else{
+
+    <div>
+    
+        <button (click)="getTokenUser()">Conseguir token normal</button>
+        <button (click)="getTokenAdmin()">Conseguir token de administrador</button>
+    
+    
+    </div>
+}
+

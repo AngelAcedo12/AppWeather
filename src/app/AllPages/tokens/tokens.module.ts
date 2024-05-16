@@ -1,30 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PagesRoutingModule } from './pages-routing.module';
-import { MapComponent } from './map/map.component';
-import { LayaoutComponent } from './layaout/layaout.component';
+import { TokensRoutingModule } from './tokens-routing.module';
+import { LayautComponent } from './Pages/layaut/layaut.component';
 import { SharedModule } from 'shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { PageGetTokenComponent } from './Pages/page-get-token/page-get-token.component';
 import { ComponentsModule } from 'components/components.module';
-import { SpinnerInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from 'services/interceptors/interceptorJWT.interceptor';
 
 
 @NgModule({
   declarations: [
-    MapComponent,
-    LayaoutComponent
+    LayautComponent,
+    PageGetTokenComponent
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
+    TokensRoutingModule,
     SharedModule,
     RouterModule,
     ComponentsModule
   ],
   providers: [
-
+   
   ]
 })
-export class PagesModule { }
+export class TokensModule { }

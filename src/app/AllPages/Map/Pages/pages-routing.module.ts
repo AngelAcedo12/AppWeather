@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayaoutComponent } from './layaout/layaout.component';
 import { MapComponent } from './map/map.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
 
 const routes: Routes = [
   {
@@ -18,6 +20,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+
 })
 export class PagesRoutingModule { }

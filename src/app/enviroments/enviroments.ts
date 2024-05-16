@@ -8,4 +8,5 @@ export const enviroment = {
     LOCATION_BASE_URL : 'http://api.openweathermap.org/geo/1.0/direct',
     MAP_BOX_TOKEN: "pk.eyJ1IjoiYW5nZWwxMjMxMjMxIiwiYSI6ImNsaTM2YnNiNjBld3QzcWxzZm5tcWpyengifQ.MhtYCIUTIf2AcAIGBZAYnA",
     OPEN_DATA_API: "https://public.opendatasoft.com",
+    TOKEN_API_URL: "https://8rkrz.wiremockapi.cloud/"
 }

@@ -43,6 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MaterialsModule,
     NgxChartsModule,
 
-  ]
+  ],
+
 })
 export class ComponentsModule { }

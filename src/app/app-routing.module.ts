@@ -33,6 +33,10 @@ const routes: Routes = [
     loadChildren: ()=> import("./AllPages/oauth/oauth.module").then(m => m.OauthModule)
   },
   {
+    path:'tokens',
+    loadChildren: ()=> import("./AllPages/tokens/tokens.module").then(m => m.TokensModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
