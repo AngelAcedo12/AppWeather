@@ -7,8 +7,6 @@ import { LayaoutComponent } from './layaout/layaout.component';
 import { SharedModule } from 'shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from 'components/components.module';
-import { SpinnerInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({

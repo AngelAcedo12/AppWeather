@@ -1,12 +1,17 @@
 <section >
 
-        @if(wheaterService.searchWheater()==undefined ){
+        @if(wheaterService.searchWheater()==undefined && wheaterService.notFound==false ){
             <app-loading></app-loading>
         }@else {
+            @if (wheaterService.notFound) {
+                <h1>Ciudad no encontrada</h1>
+            }@else {
 
-            <app-actual-time-component [wheater]="wheaterService.searchWheater()"></app-actual-time-component>
-            <app-forecast [forecast]="wheaterService.searchForecast()"></app-forecast>
-        }
+                <app-actual-time-component [wheater]="wheaterService.searchWheater()"></app-actual-time-component>
+                <app-forecast [forecast]="wheaterService.searchForecast()"></app-forecast>
+            }
+        }   
+
     
 
 </section>

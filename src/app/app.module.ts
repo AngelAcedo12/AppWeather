@@ -8,13 +8,11 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { NotFoundComponent } from './AllPages/404/404.component';
 import { SharedModule } from 'shared/shared.module';
 import { JwtInterceptor } from 'services/interceptors/interceptorJWT.interceptor';
-import { SpinnerInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
+import { MapInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
-  
   ],
   imports: [
     BrowserModule,
@@ -30,7 +28,7 @@ import { SpinnerInterceptor } from 'services/interceptors/spinner-interceptor.in
     },
     {
       provide: HTTP_INTERCEPTORS,
-      useClass:SpinnerInterceptor,
+      useClass:MapInterceptor,
       multi: true
     },
   

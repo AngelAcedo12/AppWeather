@@ -11,8 +11,6 @@ export class TokenService {
 
   constructor(private http :HttpClient)  { }
 
-  
-
   getTokenUser() {
     return this.http.get<DtoTokenRespose>(`${enviroment.TOKEN_API_URL}getTokenUser`)
 

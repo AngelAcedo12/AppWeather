@@ -16,7 +16,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
     let clonedRequest = req;
     let token = sessionStorage.getItem('token');
-    if(clonedRequest.url.includes(enviroment.TOKEN_API_URL)){
+    if(clonedRequest.url.includes(`${enviroment.TOKEN_API_URL}verifyToken`)){
       if (token) {
         clonedRequest = req.clone({
           setHeaders: {
@@ -24,10 +24,7 @@ export class JwtInterceptor implements HttpInterceptor {
           } 
         });
       }
-
     }
-  
-   
 
     return next.handle(clonedRequest);
   }
