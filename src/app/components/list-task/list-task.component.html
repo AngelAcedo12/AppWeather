@@ -1,0 +1,52 @@
+<section class="section-task">
+@if (filterStatus=="NONE") {
+
+    <ul>
+        <a routerLink="./all/TODO">TODO</a>
+        @for (task of tasks?.todoTask; track $index) {
+
+            <app-task (newTaskList)="refrestList()" [id]="$index" [task]="task" [isPreview]="false" [pos]="$index"  ></app-task>
+            
+        }
+    </ul>
+    <ul>
+        <a routerLink="./all/DOING">DOING</a>
+        @for (task of tasks?.doingTask; track $index) {
+            <app-task (newTaskList)="refrestList()" [id]="$index" [task]="task" [isPreview]="false" [pos]="$index"  ></app-task>
+            
+        }
+    </ul>
+    <ul>
+        <a routerLink="./all/DONE">DONE</a>
+        @for (task of tasks?.doneTask; track $index) {
+            <app-task (newTaskList)="refrestList()" [id]="$index" [task]="task" [isPreview]="false" [pos]="$index"  ></app-task>
+            
+        }
+    </ul>
+}@else if (filterStatus=="TODO") {
+    <ul>
+        <h1>TODO</h1>
+        @for (task of tasks?.todoTask; track $index) {
+
+            <app-task (newTaskList)="refrestList()" [id]="$index" [task]="task" [isPreview]="false" [pos]="$index"  ></app-task>
+            
+        }
+    </ul>
+}@else if (filterStatus=="DOING") {
+    <ul>
+        <h1>DOING</h1>
+        @for (task of tasks?.doingTask; track $index) {
+            <app-task (newTaskList)="refrestList()" [id]="$index" [task]="task" [isPreview]="false" [pos]="$index"  ></app-task>
+            
+        }
+    </ul>
+}@else if (filterStatus=="DONE") {
+    <ul>
+        <h1>DONE</h1>
+        @for (task of tasks?.doneTask; track $index) {
+            <app-task (newTaskList)="refrestList()" [id]="$index" [task]="task" [isPreview]="false" [pos]="$index"  ></app-task>
+            
+        }
+    </ul>
+}
+</section>

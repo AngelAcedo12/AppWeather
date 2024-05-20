@@ -1,0 +1,28 @@
+<section class="">
+    <form  [formGroup]="formTask" class="form-task">
+        <mat-form-field [appearance]="'fill'" [color]="'accent'">
+            <mat-label>Title</mat-label>
+            <input (input)="onInputTaskTitle()" matInput  placeholder="Title Task" id="titleTask" formControlName="titleTask" type="text">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Descripcion</mat-label>
+            <input (input)="onInputTaskDescription()" matInput class="descripcion" placeholder="Descripcion" id="description" type="text"  formControlName="descripcionTask" />
+           
+            
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select  (closed)="onInputTaskStatus()" formControlName="statusTask">
+               @for (statu of status; track $index) {
+                <mat-option [value]="statu">{{statu}}</mat-option>
+               }
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button (click)="postForm()"> Guardar</button>
+    </form>
+
+    <div>
+        <app-task [task]="actualTask" [isPreview]="true" [pos]=""  ></app-task>
+    </div>
+
+</section>

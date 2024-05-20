@@ -1,0 +1,51 @@
+
+@if (isPreview) {
+    <div class="task"> 
+        <div class="items-title-description">
+            <div class="title-status">
+                <h1 >{{task?.title || "Title"}}</h1>
+                @if (task?.status==="TODO") {
+                    <img src="assets/todo.png">
+                }
+                @if(task?.status==="DONE"){
+                    <img src="assets/done.png">
+                }
+                @if (task?.status==="DOING") {
+                    <img src="assets/doing.png">
+                }
+            </div>
+            <p>{{task?.descripcion || "Descripcion"}}</p>
+        </div>
+        <div class="items-button-Action">
+            <button  mat-icon-button><img src="assets/lapiz.png"></button>
+            <button  mat-icon-button><img src="assets/papelera.png"></button>
+            <button  mat-icon-button><img src="assets/complete.png"></button>
+        </div>
+    </div>
+    
+}@else {
+    <div class="task"> 
+        <div class="items-title-description">
+            <div class="title-status">
+                <h1 >{{task?.title || "Title"}}</h1>
+                @if (task?.status==="TODO") {
+                    <img src="assets/todo.png">
+                }
+                @if(task?.status==="DONE"){
+                    <img src="assets/done.png">
+                }
+                @if (task?.status==="DOING") {
+                    <img src="assets/doing.png">
+                }
+            </div>
+            <p>{{task?.descripcion || "Descripcion"}}</p>
+        </div>
+        <div class="items-button-Action">
+            <a [href]="'task/editTask/'+pos" mat-icon-button><img src="assets/lapiz.png"></a>
+            <button (click)="removedTask(task!.positionInList, task!.status)" mat-icon-button><img src="assets/papelera.png"></button>
+            <button (click)="removedTask(task!.positionInList, task!.status)"  mat-icon-button><img src="assets/complete.png"></button>
+        </div>
+    </div>
+        
+}
+

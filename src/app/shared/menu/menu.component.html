@@ -41,10 +41,20 @@
 @if(selectedLocation?.title==="Mapa"){
     <header class="menu-map">
         <button class="btn-open" (click)="openMenu()">
-            <img width="25" height="25" src="../../../assets/icons8-menú-50.webp">
+            <img width="25" height="25" src="assets/icons8-menú-50.webp">
         </button>
         <h1>{{selectedLocation?.title}}</h1>
 
+    </header>
+
+}
+
+@if(selectedLocation?.title==="Tasks"){
+    <header class="menu-map">
+        <button class="btn-open" (click)="openMenu()">
+            <img width="25" height="25" src="assets/icons8-menú-50.webp">
+        </button>
+        <h1>{{selectedLocation?.title}}</h1>
     </header>
 
 }
@@ -57,7 +67,10 @@
 }
 
 <nav class="links">
-  
+    @if(selectedLocation?.title==="Tasks"){
+        <a routerLink="/tasks" href="/task">Tasks</a>
+        <a routerLink="/tasks/newTask">Añadir Task</a>
+    }
     @for (item of menuItems; track $index) {
         <a  [href]="item.url" routerLinkActive="active">{{item.title}}</a>
     }
@@ -68,8 +81,8 @@
             <h2>Usuario: {{oauthService.userSave.name}}  Rol: {{oauthService.userSaveToken?.rol}} </h2>
         }@else{
 
-            <a href="oauth/log-in" >Iniciar Sesion</a>
-            <a href="oauth/sing-up">Registrarse</a>
+            <a routerLink="/oauth/log-in" >Iniciar Sesion</a>
+            <a routerLink="/oauth/sing-up">Registrarse</a>
         }
     </div>
 </nav>
@@ -77,7 +90,7 @@
 <nav id="menuLater" class="menu-later close">
     <button  class="btn-close" (click)="closeMenu()">Close</button>
     @for (item of menuItems; track $index) {
-        <a  [href]="item.url" routerLinkActive="active">{{item.title}}</a>
+        <a  [routerLink]="item.url" routerLinkActive="active">{{item.title}}</a>
     }
     <a href="https://github.com/AngelAcedo12/AppsRepositorios">
         GitHub
@@ -87,8 +100,8 @@
             <a  (click)="logOut()">Cerrar Sesion</a>
         }@else{
 
-            <a href="oauth/log-in" >Iniciar Sesion</a>
-            <a href="oauth/sing-up">Registrarse</a>
+            <a routerLink="/oauth/log-in" >Iniciar Sesion</a>
+            <a routerLink="/oauth/sing-up">Registrarse</a>
         }
  
 </nav>

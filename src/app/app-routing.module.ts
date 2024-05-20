@@ -37,6 +37,11 @@ const routes: Routes = [
     loadChildren: ()=> import("./AllPages/tokens/tokens.module").then(m => m.TokensModule)
   },
   {
+    path:'tasks',
+    data:{title:'Tasks'},
+    loadChildren: () => import("./AllPages/Tasks/list-task.module").then(m => m.ListTaskModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

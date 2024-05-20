@@ -1,0 +1,59 @@
+.task{
+    display: flex;
+    padding: 1em;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background: burlywood;
+    border-radius: 1em;
+    
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+    animation-name: jump;
+    animation-duration: 0.5s;
+}
+.task:hover{
+    background-color: cadetblue;
+    transition: all 0.2s ease-in-out;
+}
+h1{
+    color: aliceblue;
+
+}
+p{
+
+    color: beige;
+    font-size: large
+}
+.items-button-Action{
+    padding: 1em;
+    background-color: bisque;
+    border-radius: 10px;
+    align-items: end;
+}
+
+@keyframes jump {
+    0%,25% {
+        scale: 0.2;
+        opacity: 0;
+    }75%{
+        scale: 1;
+        opacity: 1;
+    }
+
+
+}
+.title-status{
+    display: flex;
+    flex-direction: row;
+    gap:1em;
+    & img{
+        background: bisque;
+        padding: 0.2em;
+        border-radius: 50%;
+        width: 25px;   
+        height: 25px;
+    }
+
+}

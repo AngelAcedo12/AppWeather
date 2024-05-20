@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ResultMun } from 'models/DTO/DtoMun';
 import { ComunityService } from 'services/comunity.service';
@@ -10,14 +10,14 @@ import { ComunityService } from 'services/comunity.service';
 })
 export class LocalitationSelectedComponent {
 
+
+  
   public comunitiesService = inject(ComunityService)
   
   
   @Output() selectedCity = new EventEmitter<ResultMun>()
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     setTimeout(() => {
       this.comunitiesService.getComunity()
     },500)

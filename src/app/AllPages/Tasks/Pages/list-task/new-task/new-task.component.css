@@ -1,0 +1,8 @@
+.form-task{
+    display: flex;
+    gap: 1em;
+    background: #fff;
+    height: 100%;
+    align-items: center;
+    
+}

@@ -10,12 +10,15 @@ import { DtoVerifyToken, UserLogin } from 'models/DTO/DtoVerifyToken';
 import { throwError } from 'rxjs';
 import { enviroment } from 'enviroments/enviroments';
 import { NotificationService } from 'services/notification-service.service';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpinnerInterceptor implements HttpInterceptor {
-  constructor(private tokeService: TokenService, private oauthService : OauthService, private notificacionService: NotificationService){
+  constructor(private tokeService: TokenService, private oauthService : OauthService
+    , private notificacionService: NotificationService, private router : Router){
 
   }
   
@@ -32,11 +35,15 @@ export class SpinnerInterceptor implements HttpInterceptor {
       return next.handle(clonedRequest);
     }
     
-    console.log(clonedRequest.url)
+  
     if (token!=undefined) {
       this.oauthService.saveUserSave
       if (this.oauthService.userSaveToken === undefined) {
-      
+        setTimeout(() => {
+         
+            this.router.navigateByUrl('/tokens');
+        }, 100); 
+
    
         return throwError(() => new HttpErrorResponse({
           error: 'Token invalid, the interceptor has blocked the request',
@@ -52,15 +59,13 @@ export class SpinnerInterceptor implements HttpInterceptor {
             closeMessage : "Cerrar"
           })
           setTimeout(() => {
-            window.location.href = '/tokens';
+            this.router.navigateByUrl('/tokens');
 
           }, 1000);
           return throwError(() => new HttpErrorResponse(
             {
               error: 'You do not have permissions to access this resource, the interceptor has blocked the request',
               status: 403,
-              
-  
             }
           ))
         }else{

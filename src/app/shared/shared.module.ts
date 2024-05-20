@@ -4,6 +4,7 @@ import { MenuComponent } from './menu/menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialsModule } from '../materials/materials.module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -18,7 +19,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialsModule
+    MaterialsModule,
+    RouterModule
   ],providers:[
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
 

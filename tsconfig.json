@@ -4,7 +4,14 @@
   "compilerOptions": {
     "baseUrl": "./src/app/",
     "paths": {
+      "@models":[
+        "src/app/models/"
+      ],
+      "@utils":[
+        "src/app/utils/"
+      ],
       "@assets":[
+        
         "assets/*"
       ],
     },  

@@ -29,3 +29,8 @@ a:hover{
     color: white;
     border-radius: 10px;
 }
+@media (max-width: 768px) {
+    h1{
+        font-size: 2rem;
+    }
+}

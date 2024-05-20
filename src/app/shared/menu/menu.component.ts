@@ -33,7 +33,8 @@ export class MenuComponent implements OnInit{
     {title: "El tiempo ☁", url: "/wheater"},  
     {title: "Banderas", url: "/banderas"},
     {title: "Mapa", url: "/map"},
-    {title: "Tokens", url: "/tokens"}
+    {title: "Tokens", url: "/tokens"},
+    {title: "Tasks", url: "/tasks"}
   ]
 
   search = new FormControl('')

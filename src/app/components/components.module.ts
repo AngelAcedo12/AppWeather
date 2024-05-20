@@ -13,6 +13,9 @@ import { BanderaItemComponent } from './bandera-item/bandera-item.component';
 import { ModalPaisComponent } from './modal-pais/modal-pais.component';
 import { LocalitationSelectedComponent } from './localitation-selected/localitation-selected.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListTaskComponent } from './list-task/list-task.component';
+import { TaskComponent } from './task/task.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BanderaItemComponent,
     ModalPaisComponent,
     LocalitationSelectedComponent,
-
+    ListTaskComponent,
+    TaskComponent
   ],
   exports:[
     TimeComponentComponent,
@@ -35,13 +39,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     ForecastComponent,
     BanderaItemComponent,
     BanderasListComponent,
-    LocalitationSelectedComponent
+    LocalitationSelectedComponent,
+    TaskComponent,
+    ListTaskComponent
   ],
   imports: [
     ReactiveFormsModule,
     CommonModule,
     MaterialsModule,
     NgxChartsModule,
+    RouterModule
 
   ],
 
