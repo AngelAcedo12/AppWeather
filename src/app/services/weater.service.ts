@@ -16,7 +16,7 @@ export class WeaterService {
 
   public searchWheater : Signal<DtoWheaterByLocation | undefined> = signal(undefined)
   public searchForecast : Signal<DtoForecastWeater |  undefined> = signal(undefined)
-
+  public statusPermision : Signal<'granted' | 'denied' | 'prompt'> = signal('prompt')
   public notFound =false
 
 
@@ -28,6 +28,11 @@ export class WeaterService {
     })  
     this.notFound = true
     return throwError(() => {});
+  }
+
+  setStatuPermision(status:'granted' | 'denied' | 'prompt'){
+
+    this.statusPermision = computed(() => status)
   }
 
   shearchWheaterByCoords(coords : Coords){

@@ -1,14 +1,21 @@
 <section >
 
-        @if(wheaterService.searchWheater()==undefined && wheaterService.notFound==false  ){
+        @if(wheaterService.searchWheater()==undefined && wheaterService.notFound==false && 
+        wheaterService.statusPermision()==='prompt'
+        ){
             <app-loading></app-loading>
         }@else {
+            
             @if (wheaterService.notFound) {
                 <h1>Ciudad no encontrada</h1>
             }@else {
-
-                <app-actual-time-component [wheater]="wheaterService.searchWheater()"></app-actual-time-component>
-                <app-forecast [forecast]="wheaterService.searchForecast()"></app-forecast>
+                @if(wheaterService.statusPermision()==='denied' && wheaterService.searchWheater() == undefined){
+                    <h2>Permiso de ubicacion denegado para la busqurda por localización</h2>
+                }@else {
+                    <app-actual-time-component [wheater]="wheaterService.searchWheater()"></app-actual-time-component>
+                    <app-forecast [forecast]="wheaterService.searchForecast()"></app-forecast>
+                }
+               
             }
         }   
 
