@@ -55,8 +55,8 @@ export class OauthService {
 
   isNoExistUser(user : DtoUser){
     return this.userInLocalStorage.find( u => u.name == user.name) ? false : true
-  
   }
+
   saveUserSave(){
     this.tokenService.verifyToken().subscribe(
       (res) => {
@@ -82,9 +82,11 @@ export class OauthService {
       return JSON.parse(user)
     }
   }
+
   findUser(name :string){
     return this.userInLocalStorage.find( u => u.name == name) 
   }
+
   closeSesion(){
     sessionStorage.removeItem('user')
     setTimeout(() => {

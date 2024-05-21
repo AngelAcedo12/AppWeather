@@ -8,7 +8,7 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 import { NotFoundComponent } from './AllPages/404/404.component';
 import { SharedModule } from 'shared/shared.module';
 import { JwtInterceptor } from 'services/interceptors/interceptorJWT.interceptor';
-import { MapInterceptor } from 'services/interceptors/spinner-interceptor.interceptor';
+import { MapInterceptor } from 'services/interceptors/map-interceptor.interceptor';
 
 @NgModule({
   declarations: [
