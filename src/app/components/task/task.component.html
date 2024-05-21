@@ -41,7 +41,7 @@
             <p>{{task?.descripcion || "Descripcion"}}</p>
         </div>
         <div class="items-button-Action">
-            <a [href]="'task/editTask/'+pos" mat-icon-button><img src="assets/lapiz.png"></a>
+            <a [href]="'tasks/editTask/'+pos" mat-icon-button><img src="assets/lapiz.png"></a>
             <button (click)="removedTask(task!.positionInList, task!.status)" mat-icon-button><img src="assets/papelera.png"></button>
             <button (click)="removedTask(task!.positionInList, task!.status)"  mat-icon-button><img src="assets/complete.png"></button>
         </div>

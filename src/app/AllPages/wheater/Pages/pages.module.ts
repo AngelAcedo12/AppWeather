@@ -5,7 +5,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { LayaoutComponent } from './layaout/layaout.component';
 import { ShearchPageComponent } from './shearch-page/shearch-page.component';
 import { SharedModule } from '../../../shared/shared.module';
-import { MaterialsModule } from '../../../materials/materials.module';
+import { MaterialsModule } from '../../../components/materials/materials.module';
 import { ComponentsModule } from '../../../components/components.module';
 
 

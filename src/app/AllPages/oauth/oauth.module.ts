@@ -6,7 +6,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { SingUpComponent } from './sing-up/sing-up.component';
 import { LayaoutComponent } from './layaout/layaout.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialsModule } from 'materials/materials.module';
+import { MaterialsModule } from 'components/materials/materials.module';
 import { SharedModule } from 'shared/shared.module';
 import { RouterModule } from '@angular/router';
 

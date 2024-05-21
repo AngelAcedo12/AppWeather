@@ -46,7 +46,7 @@ export class TaskServiceService {
 
   replaceTask(newTask: Task, position: number) {
     var tasks: Task[] = this.getTasks();
-    var oldTask: Task = tasks[position];
+    var oldTask: Task = tasks[newTask.positionInList-1];
     oldTask.descripcion = newTask.descripcion;
     oldTask.title = newTask.title;
     oldTask.status = newTask.status;
