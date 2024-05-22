@@ -10,20 +10,15 @@ import { MaterialsModule } from 'components/materials/materials.module';
 import { SharedModule } from 'shared/shared.module';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
-  declarations: [
-    LogInComponent,
-    SingUpComponent,
-    LayaoutComponent
-  ],
+  declarations: [LogInComponent, SingUpComponent, LayaoutComponent],
   imports: [
     CommonModule,
     OauthRoutingModule,
     ReactiveFormsModule,
     MaterialsModule,
     SharedModule,
-    RouterModule
-  ]
+    RouterModule,
+  ],
 })
-export class OauthModule { }
+export class OauthModule {}

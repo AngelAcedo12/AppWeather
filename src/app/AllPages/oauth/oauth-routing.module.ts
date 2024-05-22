@@ -6,26 +6,23 @@ import { SingUpComponent } from './sing-up/sing-up.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: LayaoutComponent,
-    children:[
+    children: [
       {
-        path:'log-in',
+        path: 'log-in',
         component: LogInComponent,
       },
       {
-        path:'sing-up',
+        path: 'sing-up',
         component: SingUpComponent,
-        
-      }
-    ]
-
+      },
+    ],
   },
- 
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class OauthRoutingModule { }
+export class OauthRoutingModule {}

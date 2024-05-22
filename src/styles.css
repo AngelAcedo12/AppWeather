@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 :root{
     
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,4 +21,48 @@ body{
 
 ::-webkit-scrollbar-track{
     background: aliceblue;
+}
+
+
+.error-snackbar{
+
+    .mdc-snackbar__surface{
+        background-color: red !important;
+    }
+    .mdc-snackbar__label{
+        color: white !important;
+    }
+    .mdc-snackbar__actions{
+        button{
+            color: white !important;
+        }
+    }
+}
+.warn-snackbar{
+
+    .mdc-snackbar__surface{
+        background-color: orange !important;
+    }
+    .mdc-snackbar__label{
+        color: white !important;
+    }
+    .mdc-snackbar__actions{
+        button{
+            color: white !important;
+        }
+    }
+}
+.success-snackbar{
+    
+        .mdc-snackbar__surface{
+            background-color: green !important;
+        }
+        .mdc-snackbar__label{
+            color: white !important;
+        }
+        .mdc-snackbar__actions{
+            button{
+                color: white !important;
+            }
+        }
 }

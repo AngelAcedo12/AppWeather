@@ -31,7 +31,7 @@ import { RouterModule } from '@angular/router';
     ModalPaisComponent,
     LocalitationSelectedComponent,
     ListTaskComponent,
-    TaskComponent
+    TaskComponent,
   ],
   exports:[
     TimeComponentComponent,

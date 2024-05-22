@@ -1,5 +1,7 @@
 
-
+::-webkit-scrollbar{
+    height: 4px;
+}
 .menu-tiempo{
     
     padding: 1em;   

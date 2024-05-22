@@ -26,7 +26,10 @@ export class MapInterceptor implements HttpInterceptor {
     private router: Router
   ) {}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
     let clonedRequest = req;
     let token = sessionStorage.getItem('token');
 
@@ -53,6 +56,7 @@ export class MapInterceptor implements HttpInterceptor {
               'No tienes acceso a este recurso, el interceptor ha bloqueado la solicitud',
             duration: 2000,
             closeMessage: 'Cerrar',
+            panelClass: 'warn-snackbar',
           });
           setTimeout(() => {
             this.router.navigateByUrl('/tokens');
@@ -68,8 +72,7 @@ export class MapInterceptor implements HttpInterceptor {
         }
         return next.handle(clonedRequest);
       }
-    } 
-      return next.handle(clonedRequest);
-    
+    }
+    return next.handle(clonedRequest);
   }
 }
