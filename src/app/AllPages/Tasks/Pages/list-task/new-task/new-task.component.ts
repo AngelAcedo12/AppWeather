@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormControlName, FormGroup } from '@angular/forms';
 import { Task } from 'models/task';
+import { NotificationService } from 'services/notification-service.service';
 import { TaskServiceService } from 'services/task-service.service';
 import { StatusTask } from 'utils/statusTask';
 
@@ -11,7 +12,7 @@ import { StatusTask } from 'utils/statusTask';
 })
 export class NewTaskComponent {
 
-  constructor(private TaskService: TaskServiceService){
+  constructor(private TaskService: TaskServiceService, private notificationService: NotificationService){
 
   }
 
@@ -58,7 +59,12 @@ export class NewTaskComponent {
       }
       console.log(this.actualTask)
       this.TaskService.saveTasks(tasks);
-      window.alert("Task guardada")
+      this.notificationService.openSnackBar({
+          message: 'Tarea guardada',
+          closeMessage: 'Aceptar',
+          duration: 2000,
+          panelClass: 'success-snackbar'
+        });
   }
 
 

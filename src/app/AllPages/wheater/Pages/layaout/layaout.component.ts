@@ -22,26 +22,7 @@ export class LayaoutComponent implements OnInit{
   ngOnInit(): void {
     this.setEventListerToGeolocation()
     this.statusPermision.subscribe((status) => {
-      if(status == 'granted'){
-
-        this.getCurretLocation()
-        
-        this.weaterService.setStatuPermision('granted')
-        
-        
-      }
-      if(status == 'denied'){
-        this.notificationService.openSnackBar({
-          message:'Permiso denegado',
-          closeMessage:'Aceptar'
-        
-        })
-        this.weaterService.setStatuPermision('denied')
-      }
-      if(status == 'prompt'){
-        this.weaterService.setStatuPermision('prompt')
-     
-      }
+      this.setStatus(status);
     }
     )
     
@@ -55,6 +36,28 @@ export class LayaoutComponent implements OnInit{
 
   }
 
+  private setStatus(status: string) {
+    if (status == 'granted') {
+
+      this.getCurretLocation();
+
+      this.weaterService.setStatuPermision('granted');
+
+
+    }
+    if (status == 'denied') {
+      this.notificationService.openSnackBar({
+        message: 'Permiso denegado',
+        closeMessage: 'Aceptar'
+      });
+      this.weaterService.setStatuPermision('denied');
+    }
+    if (status == 'prompt') {
+      this.weaterService.setStatuPermision('prompt');
+
+    }
+  }
+
   shearchNewLocation(shearch:string){
       this.weaterService.shearchWheaterByCity(shearch)
       this.weaterService.forecatShearchByCity(shearch)
@@ -64,7 +67,6 @@ export class LayaoutComponent implements OnInit{
 
    navigator.geolocation.getCurrentPosition((data) =>
       {
-
         this.weaterService.shearchWheaterByCoords({lat:data.coords.latitude,lon:data.coords.longitude})
         this.weaterService.forecatShearchByCords({lat:data.coords.latitude,lon:data.coords.longitude})
       }

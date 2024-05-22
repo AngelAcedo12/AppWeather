@@ -3,12 +3,13 @@ import { Observable } from 'rxjs';
 import { Task } from '../models/task';
 import { AllTask } from '../models/DTO/DtoAllTask';
 import { StatusTask } from '../utils/statusTask';
+import { NotificationService } from './notification-service.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskServiceService {
-  constructor() {}
+  constructor(private notificatioService : NotificationService) {}
 
   loadAllTask(): AllTask {
     var allTaskNotFilter: Task[] = this.getTasks();
@@ -51,7 +52,12 @@ export class TaskServiceService {
     oldTask.title = newTask.title;
     oldTask.status = newTask.status;
     this.saveTasks(tasks);
-    window.alert('Edit succesful');
+    this.notificatioService.openSnackBar({
+      message: 'Tarea actualizada',
+      closeMessage: 'Aceptar',
+      duration: 2000,
+      panelClass: 'success-snackbar'
+    });
   }
 
   getTasks() {

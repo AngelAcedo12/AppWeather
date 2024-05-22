@@ -50,4 +50,5 @@ export class LogInComponent {
 
     this.oautService.logIn(user);
   }
+  
 }
