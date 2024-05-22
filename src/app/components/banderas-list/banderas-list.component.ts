@@ -10,7 +10,7 @@ export class BanderasListComponent {
 
   @Input() banderas: DtoBanderas[] | undefined ;
 
-
+  isLoading = signal(false);
   modalState = signal(false);
   paisSelected : DtoBanderas | undefined;
 

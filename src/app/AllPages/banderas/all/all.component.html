@@ -1,2 +1,5 @@
 <app-banderas-list [banderas]="banderasService.banderas()"></app-banderas-list>
+@if(banderasService.isLoading()){
 
+    <app-loading></app-loading> 
+}

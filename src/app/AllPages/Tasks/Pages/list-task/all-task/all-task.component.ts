@@ -16,4 +16,5 @@ export class AllTaskComponent {
   }
 
   filterStatus: string | undefined;
+  
 }

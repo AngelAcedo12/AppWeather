@@ -11,6 +11,8 @@ export class AllComponent implements OnInit{
 
 
   constructor(public banderasService: BanderasService) { }
+
+  
   ngOnInit(): void {
 
     this.loadAllBanderas();
